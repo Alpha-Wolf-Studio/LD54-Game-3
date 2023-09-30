@@ -1,4 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 using Audio;
@@ -6,8 +5,14 @@ using Audio;
 public class ItemDisplayCanvas : MonoBehaviourSingletonInScene<ItemDisplayCanvas>
 {
     public TMPro.TextMeshProUGUI itemNameText;
-    public SpriteRenderer itemImage;
-    
+    public Image itemImage;
+
+    public override void Awake()
+    {
+        base.Awake();
+        gameObject.SetActive(false);
+    }
+
     public void OpenCanvas()
     {
         if (gameObject.activeSelf)

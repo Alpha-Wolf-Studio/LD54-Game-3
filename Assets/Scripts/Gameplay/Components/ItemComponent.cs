@@ -3,49 +3,51 @@ using UnityEngine;
 using UnityEditor;
 using Gameplay.Interfaces;
 using Gameplay.Components;
+using UnityEngine.EventSystems;
+using Unity.VisualScripting;
 
 namespace Gameplay.Components
 {
     [RequireComponent(typeof(Collider2D))]
-    public class ItemComponent : MonoBehaviour, IInteractable
+    public class ItemComponent : MonoBehaviour, IInteractable, IPointerDownHandler
     {
         #region Variables
-        private string itemNameKey;
+        [SerializeField] private string itemNameKey;
         public string ItemNameKey => itemNameKey;
         public void SetItemNameKey(string itemName)
         {
             itemNameKey = itemName;
         }
 
-        private int itemWeight;
+        [SerializeField] private int itemWeight;
         public int ItemWeight => itemWeight;
         public void SetItemWeight(int weight)
         {
             itemWeight = weight;
         }
 
-        private AudioClip itemSelectedClip;
+        [SerializeField] private AudioClip itemSelectedClip;
         public AudioClip ItemSelectedClip => itemSelectedClip;
         public void SetItemAudioClip(AudioClip clip)
         {
             itemSelectedClip = clip;
         }
 
-        private bool isMemory;
+        [SerializeField] private bool isMemory;
         public bool IsMemory => isMemory;
         public void SetItemMemory(bool memory)
         {
             isMemory = memory;
         }
 
-        private string itemTextKey;
+        [SerializeField] private string itemTextKey;
         public string ItemTextKey => itemTextKey;
         public void SetItemTextKey(string itemText)
         {
             itemTextKey = itemText;
         }
 
-        private Sprite itemImage;
+        [SerializeField] private Sprite itemImage;
         public Sprite ItemImage => itemImage;
         public void SetItemImage(Sprite sprite)
         {
@@ -56,7 +58,12 @@ namespace Gameplay.Components
         public event Action OnInteract;
         public void Interact()
         {
-            OnInteract?.Invoke();
+            OnInteract?.Invoke();           
+        }
+
+        public void OnPointerDown(PointerEventData eventData)
+        {
+            Interact();
             ItemDisplayCanvas.Get().OpenCanvas();
             ItemDisplayCanvas.Get().PopulateData(Loc.ReplaceKey(ItemNameKey), ItemImage);
         }
@@ -84,6 +91,8 @@ namespace Gameplay.Editors
 
             script.SetItemTextKey(EditorGUILayout.DelayedTextField("Item Text Key", script.ItemTextKey));
             script.SetItemImage(EditorGUILayout.ObjectField("Item Image", script.ItemImage, typeof(Sprite), true) as Sprite);
+
+            serializedObject.ApplyModifiedProperties();
         }
     }
 }

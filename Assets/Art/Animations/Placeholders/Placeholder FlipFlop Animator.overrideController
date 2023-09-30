@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Placeholder FlipFlop Animator
+  m_Controller: {fileID: 9100000, guid: 58cab85419bbda440a064d6f66764747, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5fa40a2efe38e1c47bcccd338918f929, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e5e359732b106ed4daa0350a8303664a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3af9e1051f617024b88365ec3f72fd7b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6ef5ab2cff9f1da4e8b67e3cfed3a996, type: 2}

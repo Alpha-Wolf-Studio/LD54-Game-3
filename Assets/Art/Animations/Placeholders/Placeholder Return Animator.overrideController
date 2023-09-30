@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Placeholder Return Animator
+  m_Controller: {fileID: 9100000, guid: 4834a6ac520b92442891f0560cf09ef1, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f0b776579a3064a47bd12c5f030d645d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c546a887fbf980742b9545da596c1a88, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: eefa7060c9c0e52478364f74576de07a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: acc08277e8eedcf4b94388ac89224bb9, type: 2}

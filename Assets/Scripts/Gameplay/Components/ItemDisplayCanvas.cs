@@ -6,12 +6,6 @@ using System.Linq;
 
 public class ItemDisplayCanvas : MonoBehaviourSingletonInScene<ItemDisplayCanvas>
 {
-    public override void Awake()
-    {
-        base.Awake();
-        gameObject.SetActive(false);
-    }
-
     public void OpenCanvas(GameObject go)
     {
         GameObject gameObj = CheckInstantiation(go);
@@ -55,17 +49,10 @@ public class ItemDisplayCanvas : MonoBehaviourSingletonInScene<ItemDisplayCanvas
     {
         for (short i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).gameObject == go)
+            if (transform.GetChild(i).gameObject.name == go.name + "(Clone)")
                 return transform.GetChild(i).gameObject;
         }
 
         return Instantiate(go, transform);
     }
-}
-
-[System.Serializable]
-public class ItemPanelPair
-{
-    public int id;
-    public GameObject panel;
 }

@@ -48,7 +48,7 @@ namespace CustomPlayFabAPI
 
         private void OnDestroy()
         {
-            if (UserData != null)
+            if (UserData != null && LoggedIn)
             {
                 int time = (int)_playTime;
                 UserData.AddTimePlayed(time);

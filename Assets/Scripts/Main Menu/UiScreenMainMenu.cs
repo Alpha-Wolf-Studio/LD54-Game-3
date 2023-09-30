@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using CustomSceneSwitcher.Switcher.Data;
 using UnityEngine;
 
 public class UiScreenMainMenu : MonoBehaviour
@@ -9,6 +10,7 @@ public class UiScreenMainMenu : MonoBehaviour
     [SerializeField] private UiControllerCredits controllerCredits;
     [SerializeField] private AnimationCurve animationCurve;
     [SerializeField] private float durationFade = 1.0f;
+    [SerializeField] private SceneChangeData sceneChangeToGameplayData;
 
     private IEnumerator switchPanel;
 
@@ -39,7 +41,7 @@ public class UiScreenMainMenu : MonoBehaviour
 
     private void ControllerMainMenu_onPlayButtonClicked ()
     {
-        throw new NotImplementedException();
+        CustomSceneSwitcher.Switcher.SceneSwitcher.ChangeScene(sceneChangeToGameplayData);
     }
 
     private void ControllerMainMenu_onSettingsButtonClicked () => SwitchController(durationFade, controllerSettings.canvasGroup, controllerMainMenu.canvasGroup);

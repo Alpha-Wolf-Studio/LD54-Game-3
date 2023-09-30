@@ -2821,6 +2821,15 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   durationFade: 0.5
+  sceneChangeToGameplayData:
+    sceneReference:
+      sceneAsset: {fileID: 102900000, guid: 16374569689bc60409dd77b7233cb038, type: 3}
+      scenePath: Assets/Scenes/Gameplay.unity
+    transitionControlPrefab: {fileID: 7838582443772607405, guid: 4c393d24853c99746b92e95d23c3d1a4, type: 3}
+    transitionSpeed: 1
+    minTransitionTime: 1
+    loadingBarPrefab: {fileID: 0}
+    loadingBarVisibility: 0
 --- !u!1 &1142935871
 GameObject:
   m_ObjectHideFlags: 0

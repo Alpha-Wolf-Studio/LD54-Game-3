@@ -7,6 +7,9 @@ namespace Gameplay.Components
     [RequireComponent(typeof(Collider2D))]
     public class ItemComponent : MonoBehaviour, IInteractable
     {
+        [SerializeField] private int itemWeight;
+        public int ItemWeight => itemWeight;
+        
         public event Action OnInteract;
         public void Interact()
         {

@@ -1,55 +1,71 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Audio;
+using System.Collections.Generic;
+using System.Linq;
 
 public class ItemDisplayCanvas : MonoBehaviourSingletonInScene<ItemDisplayCanvas>
 {
-    public TMPro.TextMeshProUGUI itemNameText;
-    public Image itemImage;
-
     public override void Awake()
     {
         base.Awake();
         gameObject.SetActive(false);
     }
 
-    public void OpenCanvas()
+    public void OpenCanvas(GameObject go)
     {
-        if (gameObject.activeSelf)
+        GameObject gameObj = CheckInstantiation(go);
+
+        if (gameObj.activeSelf)
             return;
 
-        gameObject.SetActive(true);
+        gameObj.SetActive(true);
     }
 
-    public void OpenCanvas(AudioClip openClip)
+    public void OpenCanvas(GameObject go, AudioClip openClip)
     {
-        if (gameObject.activeSelf)
+        GameObject gameObj = CheckInstantiation(go);
+
+        if (gameObj.activeSelf)
             return;
 
-        gameObject.SetActive(true);
+        gameObj.SetActive(true);
+
         AudioManager.Instance.PlaySfx(openClip);
     }
 
-    public void PopulateData(string name, Sprite sprite)
+    public void CloseCanvas(GameObject go)
     {
-        itemNameText.text = name;
-        itemImage.sprite = sprite;
-    }
-
-    public void CloseCanvas()
-    {
-        if (!gameObject.activeSelf)
+        if (!go.activeSelf)
             return;
 
-        gameObject.SetActive(false);
+        go.SetActive(false);
     }
 
-    public void CloseCanvas(AudioClip closeClip)
+    public void CloseCanvas(GameObject go, AudioClip closeClip)
     {
-        if (!gameObject.activeSelf)
+        if (!go.activeSelf)
             return;
 
         AudioManager.Instance.PlaySfx(closeClip);
-        gameObject.SetActive(false);
+        go.SetActive(false);
     }
+
+    private GameObject CheckInstantiation(GameObject go)
+    {
+        for (short i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject == go)
+                return transform.GetChild(i).gameObject;
+        }
+
+        return Instantiate(go, transform);
+    }
+}
+
+[System.Serializable]
+public class ItemPanelPair
+{
+    public int id;
+    public GameObject panel;
 }

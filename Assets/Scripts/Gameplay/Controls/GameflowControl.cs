@@ -81,15 +81,16 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
     {
         EndingPanel.gameObject.SetActive(true);
 
+        
+        EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries.Count == 0 ? 
+            BadEndingSprite : activeEndingEntries[0].Data.DialogueImage;
+
         if (activeEndingEntries.Count <= 1)
         {
             EndingPanelDataHolder.BackwardsButton.gameObject.SetActive(false);
             EndingPanelDataHolder.ForwardButton.gameObject.SetActive(false);
         }
-        
-        EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries.Count == 0 ? 
-            BadEndingSprite : activeEndingEntries[0].Data.DialogueImage;
-        
+
         fadeHelper.Fade(Instance, EndingPanel, FadeHelper.FadeDirection.FadeIn, 1.0f, () => SetEndingPanelData());
     }
 
@@ -108,29 +109,33 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
         {
             EndingPanelDataHolder.BackwardsButton.onClick.AddListener(() =>
             {
+                currentEndingEntryIndex--;
                 if(currentEndingEntryIndex > 0)
                 {
-                    EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[currentEndingEntryIndex - 1].Data.DialogueImage;
-                    DialogueControl.Instance.ShowDialogue(activeEndingEntries[currentEndingEntryIndex - 1].Data.PostGameDialogueKey);
+                    EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[currentEndingEntryIndex].Data.DialogueImage;
+                    DialogueControl.Instance.ShowDialogue(activeEndingEntries[currentEndingEntryIndex].Data.PostGameDialogueKey);
                 }
                 else
                 {
-                    EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[activeEndingEntries.Count].Data.DialogueImage;
-                    DialogueControl.Instance.ShowDialogue(activeEndingEntries[activeEndingEntries.Count].Data.PostGameDialogueKey);
+                    currentEndingEntryIndex = activeEndingEntries.Count - 1;
+                    EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[currentEndingEntryIndex].Data.DialogueImage;
+                    DialogueControl.Instance.ShowDialogue(activeEndingEntries[currentEndingEntryIndex].Data.PostGameDialogueKey);
                 }
             });
 
             EndingPanelDataHolder.ForwardButton.onClick.AddListener(() =>
             {
+                currentEndingEntryIndex++;
                 if (currentEndingEntryIndex < activeEndingEntries.Count)
                 {
-                    EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[currentEndingEntryIndex + 1].Data.DialogueImage;
-                    DialogueControl.Instance.ShowDialogue(activeEndingEntries[currentEndingEntryIndex + 1].Data.PostGameDialogueKey);
+                    EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[currentEndingEntryIndex].Data.DialogueImage;
+                    DialogueControl.Instance.ShowDialogue(activeEndingEntries[currentEndingEntryIndex].Data.PostGameDialogueKey);
                 }
                 else
                 {
-                    EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[0].Data.DialogueImage;
-                    DialogueControl.Instance.ShowDialogue(activeEndingEntries[0].Data.PostGameDialogueKey);
+                    currentEndingEntryIndex = 0;
+                    EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[currentEndingEntryIndex].Data.DialogueImage;
+                    DialogueControl.Instance.ShowDialogue(activeEndingEntries[currentEndingEntryIndex].Data.PostGameDialogueKey);
                 }
             });
             

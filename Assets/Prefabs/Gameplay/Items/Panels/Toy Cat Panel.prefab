@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 7165897116429327687}
   - component: {fileID: 9153112767983798375}
   - component: {fileID: 2346166905325109731}
-  - component: {fileID: 3767167107085932664}
+  - component: {fileID: 3878142099887036959}
   m_Layer: 5
   m_Name: Toy Cat Panel
   m_TagString: Untagged
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &3767167107085932664
+--- !u!114 &3878142099887036959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,11 +250,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4825946264368339968}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 600503209831af046af2d2e07281ea2f, type: 3}
+  m_Script: {fileID: 11500000, guid: abeda552f9851b4499c2f034c1589b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   backToTheRoomButton: {fileID: 8014772276366174618}
   storeButton: {fileID: 4439030505894603096}
+  Animator: {fileID: 2850672683147079457}
+  Trigger: {fileID: 1396929290485334616}
+  State: Squish
 --- !u!1001 &7081688768590778317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -427,6 +430,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6543076023586624417 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4074238756880358508, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+  m_PrefabInstance: {fileID: 7081688768590778317}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2850672683147079457
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6543076023586624417}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 458618b403f291748a7c77fdf273c5f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1396929290485334616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6543076023586624417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!114 &8014772276366174618 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 971940249960605271, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}

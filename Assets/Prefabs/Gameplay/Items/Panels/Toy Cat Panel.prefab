@@ -93,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -255,6 +255,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backToTheRoomButton: {fileID: 8014772276366174618}
   storeButton: {fileID: 4439030505894603096}
+  trigger: {fileID: 0}
+  clip: {fileID: 0}
   Animator: {fileID: 2850672683147079457}
   Trigger: {fileID: 1396929290485334616}
   State: Squish
@@ -303,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769687527276975299, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 900
+      value: 1200
       objectReference: {fileID: 0}
     - target: {fileID: 1769687527276975299, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
       propertyPath: m_SizeDelta.y

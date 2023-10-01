@@ -15,9 +15,11 @@ public class Xilophone : ItemDisplayPanel
         {
             var pointerEvent = new EventTrigger.Entry();
 
-            pointerEvent.eventID = EventTriggerType.PointerClick;
+            pointerEvent.eventID = EventTriggerType.PointerDown;
 
-            pointerEvent.callback.AddListener((e) => PressedKey(keys[i].sound));
+            var sound = keys[i].sound;
+
+            pointerEvent.callback.AddListener((e) => PressedKey(sound));
 
             keys[i].trigger.triggers.Add(pointerEvent);
         }

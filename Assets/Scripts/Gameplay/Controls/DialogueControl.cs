@@ -26,7 +26,7 @@ namespace Gameplay.Controls
             Destroy(gameObject);
         }
 
-        public void ShowDialogue(DialogueData dialogueData)
+        public void ShowDialogue(MemoryData dialogueData)
         {
             if(_showDialogueCoroutine != null)
                 StopCoroutine(_showDialogueCoroutine);
@@ -43,7 +43,7 @@ namespace Gameplay.Controls
             HideDialogueBox();
         }
 
-        private IEnumerator ShowingDialogue(DialogueData dialogueData)
+        private IEnumerator ShowingDialogue(MemoryData dialogueData)
         {
             ShowDialogueBox();
 

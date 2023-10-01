@@ -30,8 +30,8 @@ namespace Gameplay.Components
         [SerializeField] private bool isMemory;
         public bool IsMemory => isMemory;
 
-        [SerializeField] private DialogueEntry itemTextData;
-        public DialogueEntry ItemTextKey => itemTextData;
+        [SerializeField] private MemoryEntry itemTextData;
+        public MemoryEntry ItemTextKey => itemTextData;
 
         [SerializeField] private Sprite itemImage;
         public Sprite ItemImage => itemImage;
@@ -89,7 +89,7 @@ namespace Gameplay.Editors
             script.ItemImage, typeof(Sprite), true) as Sprite;
 
             serializedObject.FindProperty("itemTextData").objectReferenceValue = EditorGUILayout.ObjectField("Item Text",
-            script.ItemTextKey, typeof(DialogueEntry), true) as DialogueEntry;
+            script.ItemTextKey, typeof(MemoryEntry), true) as MemoryEntry;
 
             serializedObject.ApplyModifiedProperties();
         }

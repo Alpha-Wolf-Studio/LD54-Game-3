@@ -26,7 +26,7 @@ namespace Gameplay.Controls.Editor
 
             if (GUILayout.Button("Open Test Dialogue"))
             {
-                DialogueData data = new DialogueData()
+                MemoryData data = new MemoryData()
                 {
                     DialogueColor = Random.ColorHSV(),
                     DialogueKey = "Este item lo recibi de tu mama la noche que te hice una hermana."

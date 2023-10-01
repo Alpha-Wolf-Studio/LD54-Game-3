@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 59de807fc5e788147a469c998cc56088, type: 3}
-  m_Name: Xilophone Memory
+  m_Name: Painting Memory
   m_EditorClassIdentifier: 
   Data:
-    RelatedID: 0
-    DialogueKey: key_xilo_dialogue
-    PostGameDialogueKey: key_xilo_ending
+    RelatedID: 6
+    DialogueKey: key_painting_dialogue
+    PostGameDialogueKey: key_painting_ending
     DialogueColor: {r: 1, g: 1, b: 1, a: 1}
     DialogueImage: {fileID: 0}

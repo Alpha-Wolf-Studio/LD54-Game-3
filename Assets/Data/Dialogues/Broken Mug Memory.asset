@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Data:
     RelatedID: 0
-    DialogueKey: 
-    PostGameDialogueKey: 
+    DialogueKey: key_mug_dialogue
+    PostGameDialogueKey: key_mug_ending
     DialogueColor: {r: 1, g: 1, b: 1, a: 1}
     DialogueImage: {fileID: 0}

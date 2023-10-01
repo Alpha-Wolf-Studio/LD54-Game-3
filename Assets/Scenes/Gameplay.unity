@@ -338,6 +338,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1867508137}
     m_Modifications:
+    - target: {fileID: 1278671736514207774, guid: 12e3622bf279ff34b97b8ee69577a617, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6290827446695698524, guid: 12e3622bf279ff34b97b8ee69577a617, type: 3}
       propertyPath: m_Name
       value: Dialog Control
@@ -1271,6 +1275,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Toy Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 932908107485423700, guid: e4ac7e2ec5a0e5c4e886b8b03641a2ad, type: 3}
+      propertyPath: gameplayPanel
+      value: 
+      objectReference: {fileID: 3767167107085932664, guid: 8b29cfc241d656343884ffeda39c1e23, type: 3}
     - target: {fileID: 932908107485423703, guid: e4ac7e2ec5a0e5c4e886b8b03641a2ad, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1561,6 +1569,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Photo Strip
       objectReference: {fileID: 0}
+    - target: {fileID: 932908107485423699, guid: d003dba742ab4d1479518aac90eb8c7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 932908107485423703, guid: d003dba742ab4d1479518aac90eb8c7e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1671,6 +1683,10 @@ PrefabInstance:
     - target: {fileID: 4176569023300619086, guid: 45e26943f9013904699cef1bc13e7534, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4176569023363803642, guid: 45e26943f9013904699cef1bc13e7534, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45e26943f9013904699cef1bc13e7534, type: 3}

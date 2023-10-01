@@ -128,4 +128,4 @@ MonoBehaviour:
   itemWeight: 15
   itemSelectedClip: {fileID: 0}
   itemTextData: {fileID: 11400000, guid: 62b1ace48bc9f954186310d29c4e6615, type: 2}
-  gameplayPanel: {fileID: 4825946264368339968, guid: d41e44d4b3940134a8606020f6087fa7, type: 3}
+  gameplayPanel: {fileID: 2335634665714064569, guid: d41e44d4b3940134a8606020f6087fa7, type: 3}

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 932908107485423699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -125,10 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 10
-  itemNameKey: key_test
   itemWeight: 15
   itemSelectedClip: {fileID: 0}
-  isMemory: 1
-  itemTextData: {fileID: 0}
-  itemImage: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
-  gameplayPanel: {fileID: 0}
+  itemTextData: {fileID: 11400000, guid: 62b1ace48bc9f954186310d29c4e6615, type: 2}
+  gameplayPanel: {fileID: 4825946264368339968, guid: d41e44d4b3940134a8606020f6087fa7, type: 3}

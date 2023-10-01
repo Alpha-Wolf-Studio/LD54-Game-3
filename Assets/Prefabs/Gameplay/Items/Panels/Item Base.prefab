@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225eca42463f21b43938f59a292cab92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: key_store_item
 --- !u!1 &4074238756880358508
 GameObject:
   m_ObjectHideFlags: 0
@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225eca42463f21b43938f59a292cab92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: key_return_room
 --- !u!1 &8709199253438599856
 GameObject:
   m_ObjectHideFlags: 0

@@ -94,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.55
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -269,6 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backToTheRoomButton: {fileID: 5741783636579575051}
   storeButton: {fileID: 2093685205108123081}
+  trigger: {fileID: 3985963641306969698}
+  clip: {fileID: 8300000, guid: aa22705736af63a45b4442935c6da8ca, type: 3}
 --- !u!1001 &4815455528479589212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,3 +455,21 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1769687527276975299, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
   m_PrefabInstance: {fileID: 4815455528479589212}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8816207324840206128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4074238756880358508, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+  m_PrefabInstance: {fileID: 4815455528479589212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3985963641306969698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816207324840206128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []

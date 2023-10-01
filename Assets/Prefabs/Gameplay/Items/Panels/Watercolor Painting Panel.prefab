@@ -94,7 +94,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -269,6 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backToTheRoomButton: {fileID: 3118312964086620749}
   storeButton: {fileID: 8783940449563632271}
+  trigger: {fileID: 7811644146497745472}
+  clip: {fileID: 8300000, guid: 2865c544d341e984e92481c564324f72, type: 3}
 --- !u!1001 &2754935919943255066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -430,6 +432,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+--- !u!1 &2211800746193918070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4074238756880358508, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+  m_PrefabInstance: {fileID: 2754935919943255066}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7811644146497745472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211800746193918070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!114 &3118312964086620749 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 971940249960605271, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}

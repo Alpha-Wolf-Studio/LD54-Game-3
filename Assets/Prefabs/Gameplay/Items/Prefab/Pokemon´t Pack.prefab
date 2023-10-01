@@ -126,6 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 11
   itemWeight: 15
-  itemSelectedClip: {fileID: 0}
+  itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
   itemTextData: {fileID: 11400000, guid: 4e68d6a167c909e439c2aa5e650d19fa, type: 2}
   gameplayPanel: {fileID: 6322507789348593342, guid: 8d6447d6af2c5b44bb7e6b2e755f00da, type: 3}

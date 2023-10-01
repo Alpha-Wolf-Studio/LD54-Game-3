@@ -1,5 +1,7 @@
+using Audio;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Gameplay.UI
@@ -8,6 +10,20 @@ namespace Gameplay.UI
     {
         [SerializeField] private Button backToTheRoomButton;
         [SerializeField] private Button storeButton;
+
+        [SerializeField] private EventTrigger trigger;
+        [SerializeField] private AudioClip clip;
+
+        public virtual void Awake()
+        {
+            if(clip != null && trigger != null)
+            {
+                var pointerEvent = new EventTrigger.Entry();
+                pointerEvent.eventID = EventTriggerType.PointerDown;
+                pointerEvent.callback.AddListener((e) => AudioManager.Instance.PlaySfx(clip));
+                trigger.triggers.Add(pointerEvent);
+            }
+        }
 
         public void SetPanel(Action onStoreAction, Action onBackRoomAction)
         {

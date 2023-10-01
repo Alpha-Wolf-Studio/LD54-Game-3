@@ -79,7 +79,7 @@ namespace Gameplay.UI
             boxFill.color = boxColor;
             boxFill.fillAmount = fill;
 
-            boxFillText.text = fill.ToString("N0") + "%";
+            boxFillText.text = (int)(fill * 100) + "%";
         }
         
         private float GetBackpackCapacity() => backpackControl.CurrentItemsWeight / (float)backpackControl.MaxItemsWeight;

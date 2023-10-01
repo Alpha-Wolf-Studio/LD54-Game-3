@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using Audio;
+using Gameplay.UI;
 
-public class Xilophone : MonoBehaviour
+public class Xilophone : ItemDisplayPanel
 {
     public List<Key> keys = new List<Key>();
 

@@ -211,7 +211,8 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   boxOverlay: {fileID: 2125004602979135562}
   boxFill: {fileID: 8894477170647665739}
-  boxFillText: {fileID: 0}
+  boxFillText: {fileID: 7541175240739647935}
+  boxFillChangeSpeed: 1
 --- !u!1 &4700960793372258541
 GameObject:
   m_ObjectHideFlags: 0

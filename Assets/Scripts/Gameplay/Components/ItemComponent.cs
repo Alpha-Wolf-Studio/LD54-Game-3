@@ -6,6 +6,7 @@ using Gameplay.Components;
 using UnityEngine.EventSystems;
 using Gameplay.Controls;
 using Gameplay.Data;
+using Gameplay.UI;
 
 namespace Gameplay.Components
 {
@@ -25,10 +26,10 @@ namespace Gameplay.Components
         [SerializeField] private MemoryEntry itemTextData;
         public MemoryEntry ItemTextKey => itemTextData;
 
-        [SerializeField] private GameObject gameplayPanel;
-        public GameObject GameplayPanel => gameplayPanel;
+        [SerializeField] private ItemDisplayPanel gameplayPanel;
+        public ItemDisplayPanel GameplayPanel => gameplayPanel;
 
-        private bool _selected;
+        private bool _stored;
         private SpriteRenderer _itemRenderer;
         
         #endregion
@@ -49,9 +50,9 @@ namespace Gameplay.Components
         {
             Interact();
 
-            if (!_selected)
+            if (!_stored)
             {
-                ItemDisplayCanvas.Get().OpenCanvas(gameplayPanel);
+                ItemDisplayCanvas.Get().SetCanvas(gameplayPanel, () => ChangeState(true), () => DialogueControl.Instance.HideCurrentDialogue());
                 DialogueControl.Instance.ShowDialogue(itemTextData.Data.DialogueKey);
             }
             else
@@ -60,11 +61,11 @@ namespace Gameplay.Components
             }
         }
 
-        public void ChangeState(bool state)
+        private void ChangeState(bool stored)
         {
-            _selected = state;
+            _stored = stored;
 
-            if (_selected)
+            if (_stored)
             {
                 BackpackControl.Instance.AddItem(this);
                 
@@ -80,6 +81,8 @@ namespace Gameplay.Components
                 rendererColor.a = 1f;
                 _itemRenderer.color = rendererColor;
             }
+            
+            DialogueControl.Instance.HideCurrentDialogue();
         }
     }
 }
@@ -104,7 +107,7 @@ namespace Gameplay.Editors
                 script.ItemSelectedClip, typeof(AudioClip), true) as AudioClip;
 
             serializedObject.FindProperty("gameplayPanel").objectReferenceValue = EditorGUILayout.ObjectField("Item Panel"
-                , script.GameplayPanel, typeof(GameObject), true) as GameObject;
+                , script.GameplayPanel, typeof(ItemDisplayPanel), true) as ItemDisplayPanel;
 
             serializedObject.FindProperty("itemTextData").objectReferenceValue = EditorGUILayout.ObjectField("Item Text",
             script.ItemTextKey, typeof(MemoryEntry), true) as MemoryEntry;

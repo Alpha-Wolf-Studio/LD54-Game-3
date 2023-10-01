@@ -51,7 +51,7 @@ namespace Gameplay.Components
         {
             Interact();
             ItemDisplayCanvas.Get().OpenCanvas(gameplayPanel);
-            DialogueControl.Instance.ShowDialogue(itemTextData.Data);
+            //DialogueControl.Instance.ShowDialogue(itemTextData.Data);
         }
     }
 }

@@ -1,20 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using Audio;
 
 public class Xilophone : MonoBehaviour
 {
     public List<Key> keys = new List<Key>();
 
-    private void OnEnable()
+    private void Awake()
     {
-        
+        for(short i=0;i<keys.Count; i++)
+        {
+            var pointerEvent = new EventTrigger.Entry();
+
+            pointerEvent.eventID = EventTriggerType.PointerClick;
+
+            pointerEvent.callback.AddListener((e) => PressedKey(keys[i].sound));
+
+            keys[i].trigger.triggers.Add(pointerEvent);
+        }
+    }
+
+    public void PressedKey(AudioClip clip)
+    {
+        AudioManager.Instance.PlaySfx(clip);
     }
 }
 
 [System.Serializable]
 public class Key
 {
-    public Collider2D collider;
+    public EventTrigger trigger;
     public AudioClip sound;
 }

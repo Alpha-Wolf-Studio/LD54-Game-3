@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using CustomSceneSwitcher.Switcher.Data;
 
 public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
 {
@@ -11,11 +12,17 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
     public CanvasGroup IntroPanel;
     public CanvasGroup EndingPanel;
     public EndingPanelDataHolder EndingPanelDataHolder;
+    public SceneChangeData mainMenuSceneChangeData;
 
     [Header("Memory Data")]
-    public string IntroKey;
-    public string BadEndingKey;
     public List<MemoryEntry> endingEntries = new List<MemoryEntry>();
+    
+    [Header("Intro Data")]
+    public string IntroKey;
+
+    [Header("Bad Ending Data")] 
+    public Sprite BadEndingSprite;
+    public string BadEndingKey;
 
     private List<MemoryEntry> activeEndingEntries = new List<MemoryEntry>();
     private int currentEndingEntryIndex = 0;
@@ -25,7 +32,18 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
     {
         fadeHelper = new FadeHelper();
         InteractionControl.Instance.enabled = false;
+        
         DialogueControl.Instance.ShowDialogue(IntroKey);
+    }
+
+    private void OnEnable()
+    {
+        EndingPanelDataHolder.MainMenuButton.onClick.AddListener(GoToMainMenu);
+    }
+
+    private void OnDisable()
+    {
+        EndingPanelDataHolder.MainMenuButton.onClick.AddListener(GoToMainMenu);
     }
 
     public void FinishMainGame()
@@ -39,6 +57,8 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
             }
         }
 
+        BackpackControl.Instance.DisableControl();
+        
         EndGame();
     }
 
@@ -57,18 +77,31 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
         go.SetActive(false);
     }
 
-    public void EndGame()
+    private void EndGame()
     {
+        EndingPanel.gameObject.SetActive(true);
+
+        if (activeEndingEntries.Count <= 1)
+        {
+            EndingPanelDataHolder.BackwardsButton.gameObject.SetActive(false);
+            EndingPanelDataHolder.ForwardButton.gameObject.SetActive(false);
+        }
+        
+        EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries.Count == 0 ? 
+            BadEndingSprite : activeEndingEntries[0].Data.DialogueImage;
+        
         fadeHelper.Fade(Instance, EndingPanel, FadeHelper.FadeDirection.FadeIn, 1.0f, () => SetEndingPanelData());
+    }
+
+    private void GoToMainMenu()
+    {
+        CustomSceneSwitcher.Switcher.SceneSwitcher.ChangeScene(mainMenuSceneChangeData);
     }
 
     private void SetEndingPanelData()
     {
         if(activeEndingEntries.Count <= 0)
         {
-            EndingPanelDataHolder.BackwardsButton.gameObject.SetActive(false);
-            EndingPanelDataHolder.ForwardButton.gameObject.SetActive(false);
-            
             DialogueControl.Instance.ShowDialogue(BadEndingKey);
         }
         else
@@ -101,7 +134,6 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
                 }
             });
             
-            EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[0].Data.DialogueImage;
             DialogueControl.Instance.ShowDialogue(activeEndingEntries[0].Data.PostGameDialogueKey);
         }
     }

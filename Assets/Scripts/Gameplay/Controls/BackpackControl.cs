@@ -14,7 +14,8 @@ namespace Gameplay.Controls
         public event Action<ItemComponent> OnItemAdded;
         public event Action<ItemComponent> OnItemRemoved;
         public event Action OnEnabled;
-
+        public event Action OnDisabled;
+        
         public int CurrentItemsWeight => _currentItemsWeight;
         public int MaxItemsWeight => maxItemsWeight;
 
@@ -33,6 +34,7 @@ namespace Gameplay.Controls
         }
 
         public void EnableControl() => OnEnabled?.Invoke();
+        public void DisableControl() => OnDisabled?.Invoke();
         
         public void AddItem(ItemComponent itemComponent)
         {

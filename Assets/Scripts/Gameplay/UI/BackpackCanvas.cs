@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Gameplay.Components;
 using Gameplay.Controls;
@@ -20,13 +19,16 @@ namespace Gameplay.UI
         [SerializeField] private Gradient colorGradient;
         [SerializeField] private Image boxOverlay;
         [SerializeField] private Image boxFill;
+        [SerializeField] private CanvasGroup tooltipPanel;
         [SerializeField] private TextMeshProUGUI boxFillText;
         [SerializeField] private float boxFillChangeSpeed;
+        [SerializeField] private float timeBeforeHide = 1f;
 
         [Header("Move Out UI")] 
         [SerializeField] private Button moveOutButton;
         
         private IEnumerator _changeBoxCapacityCoroutine;
+        private IEnumerator _changeBoxPanelStateCoroutine;
         
         private void Awake()
         {
@@ -34,6 +36,7 @@ namespace Gameplay.UI
             backpackControl.OnItemRemoved += ItemRemoved;
 
             backpackControl.OnEnabled += BackpackEnable;
+            backpackControl.OnDisabled += BackpackDisable;
             
             moveOutButton.onClick.AddListener(MoveOut);
         }
@@ -51,10 +54,32 @@ namespace Gameplay.UI
             backpackControl.OnItemRemoved -= ItemRemoved;
 
             backpackControl.OnEnabled -= BackpackEnable;
+            backpackControl.OnDisabled -= BackpackDisable;
             
             moveOutButton.onClick.RemoveListener(MoveOut);
         }
 
+        private void BackpackDisable()
+        {
+            StartCoroutine(HidingBackpack());
+        }
+        
+        private IEnumerator HidingBackpack()
+        {
+            generalCanvasGroup.interactable = false;
+            generalCanvasGroup.blocksRaycasts = false;
+            
+            float t = 1;
+            while (t > 0)
+            {
+                generalCanvasGroup.alpha = t;
+                t -= Time.deltaTime * showSpeed;
+                yield return null;
+            }
+
+            generalCanvasGroup.alpha = 0;
+        }
+        
         private void BackpackEnable()
         {
             StartCoroutine(ShowingBackpack());
@@ -87,6 +112,41 @@ namespace Gameplay.UI
             ChangeBoxFill(fill);
         }
 
+        public void ChangeBoxPanelState(bool active)
+        {
+            if(_changeBoxPanelStateCoroutine != null)
+                StopCoroutine(_changeBoxPanelStateCoroutine);
+
+            _changeBoxPanelStateCoroutine = ChangingBoxPanelState(active);
+            StartCoroutine(_changeBoxPanelStateCoroutine);
+        }
+
+        private IEnumerator ChangingBoxPanelState(bool active)
+        {
+            float currentAlpha = Mathf.InverseLerp(0, 1, tooltipPanel.alpha);
+            
+            if (active)
+            {
+                while (currentAlpha < 1)
+                {
+                    tooltipPanel.alpha = currentAlpha;
+                    currentAlpha += Time.deltaTime * showSpeed;
+                    yield return null;
+                }
+                tooltipPanel.alpha = 1;
+            }
+            else
+            {
+                while (currentAlpha > 0)
+                {
+                    tooltipPanel.alpha = currentAlpha;
+                    currentAlpha -= Time.deltaTime * showSpeed;
+                    yield return null;
+                }
+                tooltipPanel.alpha = 0;
+            }
+        }
+        
         private void ChangeBoxFill(float fill)
         {
             if(_changeBoxCapacityCoroutine != null)
@@ -98,6 +158,7 @@ namespace Gameplay.UI
 
         private IEnumerator SettingBoxFill(float fill)
         {
+            ChangeBoxPanelState(true);
             float previousFill = boxFill.fillAmount;
             
             float t = 0;
@@ -109,6 +170,9 @@ namespace Gameplay.UI
             }
 
             SetBoxFill(fill);
+
+            yield return new WaitForSeconds(timeBeforeHide);
+            ChangeBoxPanelState(false);
         }
 
         private void SetBoxFill(float fill)

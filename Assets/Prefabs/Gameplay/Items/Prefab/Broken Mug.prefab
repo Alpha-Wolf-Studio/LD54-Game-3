@@ -127,5 +127,6 @@ MonoBehaviour:
   id: 9
   itemWeight: 15
   itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
+  itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
   itemTextData: {fileID: 11400000, guid: ce50800ce1148824b8a68ab3ad1b22ff, type: 2}
   gameplayPanel: {fileID: 5998810081803882024, guid: e5c8f65cdcc205046bee7226ff059592, type: 3}

@@ -48,6 +48,7 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
             () => DisableGO(IntroPanel.gameObject));
         InteractionControl.Instance.enabled = true;
         
+        BackpackControl.Instance.EnableControl();
         DialogueControl.Instance.HideCurrentDialogue();
     }
 
@@ -63,7 +64,7 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
 
     private void SetEndingPanelData()
     {
-        if(endingEntries.Count <= 0)
+        if(activeEndingEntries.Count <= 0)
         {
             EndingPanelDataHolder.BackwardsButton.gameObject.SetActive(false);
             EndingPanelDataHolder.ForwardButton.gameObject.SetActive(false);

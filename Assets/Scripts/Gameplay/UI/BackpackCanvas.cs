@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Gameplay.Components;
 using Gameplay.Controls;
@@ -10,6 +11,10 @@ namespace Gameplay.UI
     public class BackpackCanvas : MonoBehaviour
     {
         [SerializeField] private BackpackControl backpackControl;
+
+        [Header("General UI")]
+        [SerializeField] private CanvasGroup generalCanvasGroup;
+        [SerializeField] private float showSpeed = 2f;
         
         [Header("Box Amount UI")]
         [SerializeField] private Gradient colorGradient;
@@ -18,18 +23,56 @@ namespace Gameplay.UI
         [SerializeField] private TextMeshProUGUI boxFillText;
         [SerializeField] private float boxFillChangeSpeed;
 
+        [Header("Move Out UI")] 
+        [SerializeField] private Button moveOutButton;
+        
         private IEnumerator _changeBoxCapacityCoroutine;
         
         private void Awake()
         {
             backpackControl.OnItemAdded += ItemAdded;
             backpackControl.OnItemRemoved += ItemRemoved;
+
+            backpackControl.OnEnabled += BackpackEnable;
+            
+            moveOutButton.onClick.AddListener(MoveOut);
+        }
+
+        private void Start()
+        {
+            generalCanvasGroup.alpha = 0;
+            generalCanvasGroup.interactable = false;
+            generalCanvasGroup.blocksRaycasts = false;
         }
 
         private void OnDestroy()
         {
             backpackControl.OnItemAdded -= ItemAdded;
             backpackControl.OnItemRemoved -= ItemRemoved;
+
+            backpackControl.OnEnabled -= BackpackEnable;
+            
+            moveOutButton.onClick.RemoveListener(MoveOut);
+        }
+
+        private void BackpackEnable()
+        {
+            StartCoroutine(ShowingBackpack());
+        }
+
+        private IEnumerator ShowingBackpack()
+        {
+            float t = 0;
+            while (t < 1)
+            {
+                generalCanvasGroup.alpha = t;
+                t += Time.deltaTime * showSpeed;
+                yield return null;
+            }
+
+            generalCanvasGroup.alpha = 1;
+            generalCanvasGroup.interactable = true;
+            generalCanvasGroup.blocksRaycasts = true;
         }
 
         private void ItemAdded(ItemComponent _)
@@ -83,5 +126,10 @@ namespace Gameplay.UI
         }
         
         private float GetBackpackCapacity() => backpackControl.CurrentItemsWeight / (float)backpackControl.MaxItemsWeight;
+
+        private void MoveOut()
+        {
+            GameflowControl.Instance.FinishMainGame();
+        }
     }
 }

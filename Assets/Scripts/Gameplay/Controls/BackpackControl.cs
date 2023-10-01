@@ -13,6 +13,7 @@ namespace Gameplay.Controls
 
         public event Action<ItemComponent> OnItemAdded;
         public event Action<ItemComponent> OnItemRemoved;
+        public event Action OnEnabled;
 
         public int CurrentItemsWeight => _currentItemsWeight;
         public int MaxItemsWeight => maxItemsWeight;
@@ -31,6 +32,8 @@ namespace Gameplay.Controls
             Destroy(gameObject);
         }
 
+        public void EnableControl() => OnEnabled?.Invoke();
+        
         public void AddItem(ItemComponent itemComponent)
         {
             if (_currentItemsWeight + itemComponent.ItemWeight > maxItemsWeight) return;

@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using Gameplay.Controls;
 using Gameplay.Data;
 using Gameplay.UI;
+using Audio;
 
 namespace Gameplay.Components
 {
@@ -22,6 +23,9 @@ namespace Gameplay.Components
 
         [SerializeField] private AudioClip itemSelectedClip;
         public AudioClip ItemSelectedClip => itemSelectedClip;
+
+        [SerializeField] private AudioClip itemReturnClip;
+        public AudioClip ItemReturnClip => itemReturnClip;
 
         [SerializeField] private MemoryEntry itemTextData;
         public MemoryEntry ItemTextKey => itemTextData;
@@ -43,7 +47,12 @@ namespace Gameplay.Components
 
         public void Interact()
         {
-            OnInteract?.Invoke();           
+            OnInteract?.Invoke();
+
+            if (!_stored && itemSelectedClip)
+                AudioManager.Instance.PlaySfx(itemSelectedClip);
+            else if (_stored && itemReturnClip)
+                AudioManager.Instance.PlaySfx(ItemReturnClip);
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -103,8 +112,11 @@ namespace Gameplay.Editors
             serializedObject.FindProperty("itemWeight").intValue = EditorGUILayout.DelayedIntField("Item Weight", 
                 script.ItemWeight);
 
-            serializedObject.FindProperty("itemSelectedClip").objectReferenceValue = EditorGUILayout.ObjectField("Item Clip",
+            serializedObject.FindProperty("itemSelectedClip").objectReferenceValue = EditorGUILayout.ObjectField("Item Select Clip",
                 script.ItemSelectedClip, typeof(AudioClip), true) as AudioClip;
+
+            serializedObject.FindProperty("itemReturnClip").objectReferenceValue = EditorGUILayout.ObjectField("Item Return Clip",
+                script.ItemReturnClip, typeof(AudioClip), true) as AudioClip;
 
             serializedObject.FindProperty("gameplayPanel").objectReferenceValue = EditorGUILayout.ObjectField("Item Panel"
                 , script.GameplayPanel, typeof(ItemDisplayPanel), true) as ItemDisplayPanel;

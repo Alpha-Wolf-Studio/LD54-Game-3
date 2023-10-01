@@ -9,7 +9,7 @@ public class Xilophone : ItemDisplayPanel
 {
     public List<Key> keys = new List<Key>();
 
-    private void Awake()
+    public override void Awake()
     {
         for(short i=0;i<keys.Count; i++)
         {

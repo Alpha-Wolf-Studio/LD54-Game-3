@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 932908107485423703}
   - component: {fileID: 932908107485423702}
-  - component: {fileID: 932908107485423701}
   - component: {fileID: 932908107485423700}
-  m_Layer: 0
+  - component: {fileID: 8955571540680772381}
+  m_Layer: 6
   m_Name: Milk Teeth Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,8 +86,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &932908107485423701
-BoxCollider2D:
+--- !u!114 &932908107485423700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932908107485423699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da37d45eb74505a4b9b047312226678f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 8
+  itemWeight: 10
+  itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
+  itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
+  itemTextData: {fileID: 11400000, guid: f577e51a13abfcd40937d5e094836c65, type: 2}
+  gameplayPanel: {fileID: 6202197543229290487, guid: 15b9cc92ce50c7a418b9a5526120a230, type: 3}
+--- !u!60 &8955571540680772381
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,24 +127,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &932908107485423700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932908107485423699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da37d45eb74505a4b9b047312226678f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 8
-  itemWeight: 10
-  itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
-  itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
-  itemTextData: {fileID: 11400000, guid: f577e51a13abfcd40937d5e094836c65, type: 2}
-  gameplayPanel: {fileID: 6202197543229290487, guid: 15b9cc92ce50c7a418b9a5526120a230, type: 3}
+  m_Points:
+    m_Paths:
+    - - {x: -0.145, y: 0.114999995}
+      - {x: -0.145, y: -0.114999995}
+      - {x: 0.145, y: -0.114999995}
+      - {x: 0.145, y: 0.114999995}

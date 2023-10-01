@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 932908107485423703}
   - component: {fileID: 932908107485423702}
-  - component: {fileID: 932908107485423701}
   - component: {fileID: 932908107485423700}
-  m_Layer: 0
+  - component: {fileID: 4056170746676451925}
+  m_Layer: 6
   m_Name: Xilophone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,32 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &932908107485423701
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932908107485423699}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0067307353, y: -0.00932771}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.28, y: 0.73}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.318344, y: 0.75263643}
-  m_EdgeRadius: 0
 --- !u!114 &932908107485423700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,3 +104,55 @@ MonoBehaviour:
   itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
   itemTextData: {fileID: 11400000, guid: 233ee4b8172fa5a40b9728d59dab6827, type: 2}
   gameplayPanel: {fileID: 4609946679774518908, guid: cffc15e7d1694e442a69b56dcbdbafe9, type: 3}
+--- !u!60 &4056170746676451925
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932908107485423699}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 0.73}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.37, y: -0.105}
+      - {x: 0.19999999, y: -0.305}
+      - {x: 0.19999999, y: -0.36499998}
+      - {x: 0.28, y: -0.36499998}
+      - {x: 0.47, y: -0.255}
+      - {x: 0.47, y: -0.114999995}
+      - {x: 0.45, y: -0.105}
+    - - {x: 0.53, y: -0.225}
+      - {x: 0.32, y: -0.295}
+      - {x: 0.31, y: -0.325}
+      - {x: 0.31, y: -0.36499998}
+      - {x: 0.48, y: -0.36499998}
+      - {x: 0.64, y: -0.315}
+      - {x: 0.64, y: -0.225}
+    - - {x: -0.12, y: 0.175}
+      - {x: -0.39, y: 0.36499998}
+      - {x: -0.52, y: 0.36499998}
+      - {x: -0.64, y: 0.285}
+      - {x: -0.64, y: 0.185}
+      - {x: -0.59999996, y: 0.114999995}
+      - {x: -0.19999999, y: -0.095}
+      - {x: 0.11, y: -0.255}
+      - {x: 0.13, y: -0.255}
+      - {x: 0.29, y: -0.175}
+      - {x: 0.29999998, y: -0.145}
+      - {x: 0.29999998, y: -0.085}
+      - {x: 0.17, y: -0.015}

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 932908107485423703}
   - component: {fileID: 932908107485423702}
-  - component: {fileID: 932908107485423701}
   - component: {fileID: 932908107485423700}
-  m_Layer: 0
+  - component: {fileID: 5259027694360080584}
+  m_Layer: 6
   m_Name: Watercolor Painting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,8 +86,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &932908107485423701
-BoxCollider2D:
+--- !u!114 &932908107485423700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932908107485423699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da37d45eb74505a4b9b047312226678f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 6
+  itemWeight: 26
+  itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
+  itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
+  itemTextData: {fileID: 11400000, guid: d6c0bbe15976c6d48bec0ceda24e11c5, type: 2}
+  gameplayPanel: {fileID: 8308202855399182183, guid: 8e6ba497235d0a7439586c9067af01da, type: 3}
+--- !u!60 &5259027694360080584
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,24 +127,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &932908107485423700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932908107485423699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da37d45eb74505a4b9b047312226678f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 6
-  itemWeight: 26
-  itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
-  itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
-  itemTextData: {fileID: 11400000, guid: d6c0bbe15976c6d48bec0ceda24e11c5, type: 2}
-  gameplayPanel: {fileID: 8308202855399182183, guid: 8e6ba497235d0a7439586c9067af01da, type: 3}
+  m_Points:
+    m_Paths:
+    - - {x: 0.805, y: -0.155}
+      - {x: 0.805, y: 0.995}
+      - {x: 0.765, y: 1.015}
+      - {x: 0.675, y: 1.015}
+      - {x: 0.48499998, y: 0.905}
+      - {x: 0.175, y: 0.72499996}
+      - {x: -0.035, y: 0.60499996}
+      - {x: -0.275, y: 0.465}
+      - {x: -0.675, y: 0.235}
+      - {x: -0.79499996, y: 0.16499999}
+      - {x: -0.805, y: 0.145}
+      - {x: -0.805, y: -0.995}
+      - {x: -0.775, y: -1.015}
+      - {x: -0.66499996, y: -1.015}
+      - {x: -0.475, y: -0.905}
+      - {x: 0.33499998, y: -0.435}
+      - {x: 0.715, y: -0.21499999}

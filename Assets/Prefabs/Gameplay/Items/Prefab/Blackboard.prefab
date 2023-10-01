@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 932908107485423703}
   - component: {fileID: 932908107485423702}
-  - component: {fileID: 932908107485423701}
   - component: {fileID: 932908107485423700}
-  m_Layer: 0
+  - component: {fileID: 6788312885046922081}
+  m_Layer: 6
   m_Name: Blackboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,8 +86,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &932908107485423701
-BoxCollider2D:
+--- !u!114 &932908107485423700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932908107485423699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da37d45eb74505a4b9b047312226678f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 4
+  itemWeight: 32
+  itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
+  itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
+  itemTextData: {fileID: 11400000, guid: 58c6f32606eeee34f922943788cfee5b, type: 2}
+  gameplayPanel: {fileID: 2729752907192968165, guid: 34e07f60e4e64b846923456d46bbdf73, type: 3}
+--- !u!60 &6788312885046922081
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,24 +127,24 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &932908107485423700
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 932908107485423699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da37d45eb74505a4b9b047312226678f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 4
-  itemWeight: 32
-  itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
-  itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
-  itemTextData: {fileID: 11400000, guid: 58c6f32606eeee34f922943788cfee5b, type: 2}
-  gameplayPanel: {fileID: 2729752907192968165, guid: 34e07f60e4e64b846923456d46bbdf73, type: 3}
+  m_Points:
+    m_Paths:
+    - - {x: 0.65999997, y: -0.035}
+      - {x: 0.65, y: -0.015}
+      - {x: 0.5, y: 0.074999996}
+      - {x: 0.06, y: 0.33499998}
+      - {x: -0.07, y: 0.405}
+      - {x: -0.16, y: 0.405}
+      - {x: -0.19999999, y: 0.385}
+      - {x: -0.32, y: 0.315}
+      - {x: -0.48999998, y: 0.21499999}
+      - {x: -0.61, y: 0.145}
+      - {x: -0.65999997, y: 0.105}
+      - {x: -0.65999997, y: 0.024999999}
+      - {x: -0.52, y: -0.065}
+      - {x: -0.03, y: -0.355}
+      - {x: 0.07, y: -0.405}
+      - {x: 0.16, y: -0.405}
+      - {x: 0.31, y: -0.325}
+      - {x: 0.65, y: -0.114999995}
+      - {x: 0.65999997, y: -0.095}

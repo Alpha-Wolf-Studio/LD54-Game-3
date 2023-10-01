@@ -1,2 +1,55 @@
-key,en,spa,fr
-key_test,this is a test,esta es una prueba,c'est un test
+key,en,spa
+key_test,this is a test,esta es una prueba
+key_play,Play,Jugar
+key_settings,Settings,Ajustes
+key_credits,Credits,Créditos
+key_more_games,More Games,Mas Juegos
+key_master_sfx,Master,Global
+key_music,Music,Música
+key_sfx,SFX,SFX
+key_dev,Developer,Desarrollo
+key_art,Artists,Artistas
+key_design,Design,Diseño
+key_start,Start Packing,Comenzar a Empacar
+key_cat,"Plush Cat, Black and White",Gato de Peluche Blanco y Negro
+key_cat_dialogue,I remember as a kid asking Santa for a cat. I ended up receiving this plushie instead. I became fond of it at the end.,Recuerdo que de niña pedí un gato de navidad y terminaron regalándome un peluche. Después me encariñé con él.
+key_pack,Card Pack,Pack de Cartas
+key_pack_dialogue,I found this in Dylan's room during the cleanup. I miss him so much.,Encontré esto en la habitación de Dylan durante la limpieza. Lo extraño tanto.
+key_mug,Broken Mug,Taza Rota
+key_mug_dialogue,"This was a gift from my first boyfriend. Its so long ago, its kinda funny. Still, I could never force myself to throw it away.","Este fue un regalo de mi primer novio. Fue hace tanto, es un poco gracioso de recordar. De igual manera, nunca conseguí el valor para tirarla."
+key_book,Used Book,Libro Gastado
+key_book_dialogue,First book I ever read. I remember reading it again and again because I didn't own any other ones. I ended up memorizing most of it.,El primer libro que leí. Recuerdo leer una y otra vez porque no tenía ningún otro. Acabé memorizando gran parte.
+key_lion,Plush Lion,Leon de Peluche
+key_lion_dialogue,The one time I could beat one of those shady claw-machines.,La única vez que le gané a una de esas máquinas de peluches.
+key_lamp,Foot Lamp,Lampara de Pie
+key_lamp_dialogue,I remember this lamp was originally in my grandparents house. Then it moved into our living room. Then it moved in here. I wonder how many more travels it made that I don't know of.,"Recuerdo que esta lámpara estaba primero en la casa de mis abuelos. Luego, paso a estar a nuestra sala de estar. Luego, pasó a mi habitación. Me preguntó cuantos otros viajes habrá hecho de los cuales no conozco nada."
+key_xilo,Xilophone,Xilófono
+key_xilo_dialogue,My grandparents gave me this. I was just a kid and thought it was the best gift ever. My parents ended up taking it away from me because i played with it all day long and even some neighbours came to complain once.,"Mis abuelos me regalaron esto. Era muy chica y pensé que era el mejor regalo del mundo. Mis padres acabaron sacandomelo porque molestaba todo el día con él, hasta el punto que incluso unos vecinos se quejaron una vez."
+key_board,Marker Whiteboard,Pizarra de Marcadores
+key_board_dialogue,I used this so much during high school. It helped me organize a lot.,Use tanto esto durante la secundaria. Me ayudó mucho a organizarme.
+key_souvenir,Snow Souvenir,Souvenir de Nieve
+key_souvenir_dialogue,"We had planned that trip for months. I was so excited to learn how to ski. When we arrived, all courses were closed due to bad weather. I remember falling asleep in front of the fire after a cup of hot chocolate.","Planeamos ese viaje por meses, estaba tan emocionada por aprender a esquiar. Cuando llegamos todos los recorridos estaban cerrados por mal clima. Recuerdo quedarme dormida frente al fuego luego de una taza de chocolate caliente."
+key_tooth,Old Tooth Box,Caja con Dientes de Leche
+key_tooth_dialogue,"My mother kept my first tooth. I thought it was creepy, but she kept on saving them in a box. The only ones that aren't here are the ones I never told her about.","Mi madre guardó mi primer diente. Yo pensé que era raro, pero ella siguió guardándolos en una caja. Los únicos que no están aquí son aquellos de los que nunca supo."
+key_photos,Photo Strip,Tira de Fotos
+key_photos_dialogue,"This was the last time I saw him. Probably the best vacations I ever had, and still, for nothing in the world I'd see him again.","Esta fue la última vez que lo vi. Fueron probablemente las mejores vacaciones que tuve en mi vida, y aún así, no lo volvería a ver por nada del mundo."
+key_painting,Painting,Cuadro Pintado
+key_painting_dialogue,"Oh, how I ended up despising these art classes. The techniques were fun, but they were so obsessed with us learning so much boring stuff. Its a shame i never painted again after that.","Oh, como acabé odiando esas clases de arte. Las técnicas eran divertidas, pero estaban tan obsesionados en hacernos aprender tantas cosas aburridas. Es una lástima que nunca más pinté después de eso."
+key_cat_ending,I became too fond of it to leave it behind.,Me encariñé demasiado con él. No podría abandonarlo aquí.
+key_pack_ending,Not in a million years could I let this behind. Its one of the few things that remained intact. I can remember the excitement in his face when our parents bought it.,"Ni loca podía olvidarme de esto. Es uno de los pocos objetos que quedaron intactos. Puedo rememorar la 
+cara de emoción de mi hermano cuando nuestros padres se lo compraron."
+key_mug_ending,"A funny memory of when I was younger, all we cared about was running around the house making a mess. ¿Does he remember me still?","Un divertido recuerdo de cuando aún las responsabilidades no existían, y solo nos importaba corretear y
+gritar por la casa ¿Se acordará de mí aún?"
+key_book_ending,I would die before abandoning this book.,Me muero antes de abandonar este libro. 
+key_lion_ending,I take this trophy with me.,Me llevo este trofeo conmigo. 
+key_lamp_ending,Another trip won't kill it. I'll ask  to handle with care.,Otro viaje más no le vendrá mal. Voy a pedir que lo lleven con mucho cuidado.
+key_xilo_ending,I hope my new neighbours don't mind. I could use some music in my life.,"Me puede servir para la universidad, o escribir las miles de ideas que se me pasan por la cabeza."
+key_board_ending,"I could still use it for college, or any other aspect of my life if it comes to it.","Me puede servir para la universidad, o escribir las miles de ideas que se me pasan por la cabeza."
+key_souvenir_ending,I'll do good taking it with me. Its a dumb way to remember things don't always end up as planned.,Me hará bien llevármelo. Una forma tonta de recordar que no todo sale como uno quiere.
+key_tooth_ending,She'd kill me if I forgot them. She saved them with love.,Ella me mataría si me los olvido. Los guardó con mucho amor.
+key_photos_ending,Bittersweet memory. Its not like I can forget it either way.,"Un recuerdo agridulce. Realmente me gustan mucho las fotos, pero..."
+key_painting_ending,Its going to look good in my new room. Maybe I should even dare retake some classes.,"Va a quedar lindo en mi nuevo cuarto. Incluso en un nuevo ambiente quizás me animo a retomar las clases
+de pintura."
+key_secret_ending,I'm moving out for a reason. None of these things can pay in value the space they take up in my heart. I need to be able to leave it all behind once and for all.,Por algo me estoy mudando. Ninguna de estas cosas pagan con valor en mi vida el espacio que ocupan en mi corazón. Tengo que poder dejarlas atrás de una vez por todas.
+key_language,Language,Lenguaje
+key_back,Back,Volver

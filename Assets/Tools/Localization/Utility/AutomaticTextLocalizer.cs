@@ -17,5 +17,14 @@ public class AutomaticTextLocalizer : MonoBehaviour
         string s = Loc.ReplaceKey(key); 
 
         textField.text = s;
+
+        FindObjectOfType<UiControllerSettings>().onLanguageChanged += (() => Localize());
+    }
+
+    private void Localize()
+    {
+        string s = Loc.ReplaceKey(key);
+
+        textField.text = s;
     }
 }

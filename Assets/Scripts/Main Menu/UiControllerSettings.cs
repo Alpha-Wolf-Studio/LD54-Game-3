@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +9,7 @@ public class UiControllerSettings : MonoBehaviour
     private const float maxVolume = 80;
 
     public event Action onSettingsCloseButtonClicked;
+    public event Action onLanguageChanged;
 
     [SerializeField] private UnityEngine.Audio.AudioMixer audioMixer;
     [SerializeField] private AnimationCurve logarithm;
@@ -15,6 +18,7 @@ public class UiControllerSettings : MonoBehaviour
     [SerializeField] private Slider sliderVolumeGeneral;
     [SerializeField] private Slider sliderVolumeMusic;
     [SerializeField] private Slider sliderVolumeEffect;
+    [SerializeField] private TMPro.TMP_Dropdown dropdownLanguage;
     [SerializeField] private Button closeButton;
 
     private void Awake ()
@@ -23,6 +27,8 @@ public class UiControllerSettings : MonoBehaviour
         sliderVolumeMusic.onValueChanged.AddListener(OnSliderVolumeMusicChanged);
         sliderVolumeEffect.onValueChanged.AddListener(OnSliderVolumeEffectChanged);
         closeButton.onClick.AddListener(OnSettingsCloseButtonClicked);
+
+        SetupDropdown();
     }
 
     private void OnDestroy ()
@@ -49,6 +55,37 @@ public class UiControllerSettings : MonoBehaviour
     {
         float newValue = logarithm.Evaluate(volume) * maxVolume - maxVolume;
         audioMixer.SetFloat("VolumeEffect", newValue);
+    }
+
+    private void SetupDropdown()
+    {
+        List<TMP_Dropdown.OptionData> languageList = new List<TMP_Dropdown.OptionData>();
+
+        dropdownLanguage.ClearOptions();
+
+        for (short i = 0; i < Enum.GetNames(typeof(Loc.Language)).Length; i++)
+        {
+            TMP_Dropdown.OptionData data = new TMP_Dropdown.OptionData();
+
+            Loc.Language language = (Loc.Language)i;
+            data.text = language.ToString();
+
+            languageList.Add(data);
+        }
+
+        dropdownLanguage.AddOptions(languageList);
+        dropdownLanguage.onValueChanged.AddListener(delegate
+        {
+            ChangeLanguage(dropdownLanguage);
+            onLanguageChanged.Invoke();
+        });
+
+        dropdownLanguage.value = (int)Loc.currentLanguage;
+    }
+
+    void ChangeLanguage(TMP_Dropdown change)
+    {
+        Loc.currentLanguage = (Loc.Language)change.value;
     }
 
     private void OnSettingsCloseButtonClicked () => onSettingsCloseButtonClicked?.Invoke();

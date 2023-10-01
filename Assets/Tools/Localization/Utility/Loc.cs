@@ -6,7 +6,7 @@ public class Loc
     {
         English,
         Spanish,
-        French
+        //French
     }
 
     public static Language currentLanguage = Language.English;
@@ -24,7 +24,6 @@ public class Loc
 
         localisedEN = csvLoader.GetDictionaryValues("en");
         localisedES = csvLoader.GetDictionaryValues("spa");
-        localisedFR = csvLoader.GetDictionaryValues("fr");
 
         isInit = true;
     }
@@ -44,9 +43,9 @@ public class Loc
             case Language.Spanish:
                 localisedES.TryGetValue(key, out value);
                 break;
-            case Language.French:
-                localisedFR.TryGetValue(key, out value);
-                break;
+            //case Language.French:
+            //    localisedFR.TryGetValue(key, out value);
+            //    break;
             default:
                 break;
         }

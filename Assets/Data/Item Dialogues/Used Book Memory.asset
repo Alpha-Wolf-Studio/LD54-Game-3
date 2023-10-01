@@ -17,4 +17,4 @@ MonoBehaviour:
     DialogueKey: key_book_dialogue
     PostGameDialogueKey: key_book_ending
     DialogueColor: {r: 1, g: 1, b: 1, a: 1}
-    DialogueImage: {fileID: 0}
+    DialogueImage: {fileID: 21300000, guid: 8b6b1ac611f21484a921da2809771002, type: 3}

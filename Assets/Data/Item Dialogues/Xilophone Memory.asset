@@ -17,4 +17,4 @@ MonoBehaviour:
     DialogueKey: key_xilo_dialogue
     PostGameDialogueKey: key_xilo_ending
     DialogueColor: {r: 1, g: 1, b: 1, a: 1}
-    DialogueImage: {fileID: 0}
+    DialogueImage: {fileID: 21300000, guid: c418a1a60a081fb41abda4782c033e4e, type: 3}

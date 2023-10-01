@@ -17,4 +17,4 @@ MonoBehaviour:
     DialogueKey: key_lion_dialogue
     PostGameDialogueKey: key_lion_ending
     DialogueColor: {r: 1, g: 1, b: 1, a: 1}
-    DialogueImage: {fileID: 0}
+    DialogueImage: {fileID: 21300000, guid: b7e3708ba59e12243bb072c703dfabfc, type: 3}

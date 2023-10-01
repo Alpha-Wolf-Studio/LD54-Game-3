@@ -18,23 +18,14 @@ namespace Gameplay.Components
         [SerializeField] private int id;
         public int ID => id;
 
-        [SerializeField] private string itemNameKey;
-        public string ItemNameKey => itemNameKey;
-
         [SerializeField] private int itemWeight;
         public int ItemWeight => itemWeight;
 
         [SerializeField] private AudioClip itemSelectedClip;
         public AudioClip ItemSelectedClip => itemSelectedClip;
 
-        [SerializeField] private bool isMemory;
-        public bool IsMemory => isMemory;
-
         [SerializeField] private MemoryEntry itemTextData;
         public MemoryEntry ItemTextKey => itemTextData;
-
-        [SerializeField] private Sprite itemImage;
-        public Sprite ItemImage => itemImage;
 
         [SerializeField] private GameObject gameplayPanel;
         public GameObject GameplayPanel => gameplayPanel;
@@ -51,7 +42,7 @@ namespace Gameplay.Components
         {
             Interact();
             ItemDisplayCanvas.Get().OpenCanvas(gameplayPanel);
-            //DialogueControl.Instance.ShowDialogue(itemTextData.Data);
+            DialogueControl.Instance.ShowDialogue(itemTextData.Data.DialogueKey);
         }
     }
 }
@@ -67,9 +58,6 @@ namespace Gameplay.Editors
 
             serializedObject.FindProperty("id").intValue = EditorGUILayout.DelayedIntField("Item ID", script.ID);
 
-            serializedObject.FindProperty("itemNameKey").stringValue = EditorGUILayout.DelayedTextField("Item Name Key",
-                script.ItemNameKey);
-
             serializedObject.FindProperty("itemWeight").intValue = EditorGUILayout.DelayedIntField("Item Weight", 
                 script.ItemWeight);
 
@@ -78,15 +66,6 @@ namespace Gameplay.Editors
 
             serializedObject.FindProperty("gameplayPanel").objectReferenceValue = EditorGUILayout.ObjectField("Item Panel"
                 , script.GameplayPanel, typeof(GameObject), true) as GameObject;
-
-            serializedObject.FindProperty("isMemory").boolValue = EditorGUILayout.Toggle("Is Item Memory", 
-                script.IsMemory);         
-
-            if (!script.IsMemory)
-                return;
-
-            serializedObject.FindProperty("itemImage").objectReferenceValue = EditorGUILayout.ObjectField("Item Image",
-            script.ItemImage, typeof(Sprite), true) as Sprite;
 
             serializedObject.FindProperty("itemTextData").objectReferenceValue = EditorGUILayout.ObjectField("Item Text",
             script.ItemTextKey, typeof(MemoryEntry), true) as MemoryEntry;

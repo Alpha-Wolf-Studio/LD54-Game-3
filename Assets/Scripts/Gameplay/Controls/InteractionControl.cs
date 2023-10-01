@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Gameplay.Controls
 {
-    public class InteractionControl : MonoBehaviour
+    public class InteractionControl : MonoBehaviourSingleton<InteractionControl>
     {
         
         private Camera _camera;

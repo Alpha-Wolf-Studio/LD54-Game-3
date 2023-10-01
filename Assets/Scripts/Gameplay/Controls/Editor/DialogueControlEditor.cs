@@ -31,7 +31,7 @@ namespace Gameplay.Controls.Editor
                     DialogueColor = Random.ColorHSV(),
                     DialogueKey = "Este item lo recibi de tu mama la noche que te hice una hermana."
                 };
-                _script.ShowDialogue(data);
+                _script.ShowDialogue(data.DialogueKey);
             }
             
             if (GUILayout.Button("Close Test Dialogue"))

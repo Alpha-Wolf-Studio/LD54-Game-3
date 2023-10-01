@@ -18,6 +18,7 @@ namespace Gameplay.Controls
         public int MaxItemsWeight => maxItemsWeight;
 
         private readonly List<ItemComponent> _itemsInBackpack = new List<ItemComponent>();
+        public List<ItemComponent> ItemsInBackpack => _itemsInBackpack;
         private int _currentItemsWeight = 0;
 
         private void Awake()

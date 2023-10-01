@@ -26,12 +26,12 @@ namespace Gameplay.Controls
             Destroy(gameObject);
         }
 
-        public void ShowDialogue(MemoryData dialogueData)
+        public void ShowDialogue(string dialogueKey)
         {
             if(_showDialogueCoroutine != null)
                 StopCoroutine(_showDialogueCoroutine);
 
-            _showDialogueCoroutine = ShowingDialogue(dialogueData);
+            _showDialogueCoroutine = ShowingDialogue(dialogueKey);
             StartCoroutine(_showDialogueCoroutine);
         }
         
@@ -43,12 +43,12 @@ namespace Gameplay.Controls
             HideDialogueBox();
         }
 
-        private IEnumerator ShowingDialogue(MemoryData dialogueData)
+        private IEnumerator ShowingDialogue(string dialogueKey)
         {
             ShowDialogueBox();
 
-            string text = dialogueData.DialogueKey;
-            //string text = Loc.ReplaceKey(dialogData.DialogKey);
+            string text = dialogueKey;
+            //string text = Loc.ReplaceKey(dialogKey);
             string currentText = "";
 
             int currentIndex = 0;

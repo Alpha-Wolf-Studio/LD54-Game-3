@@ -11,8 +11,8 @@ namespace Gameplay.Controls
         
         public static BackpackControl Instance { get; private set; }
 
-        public Action<ItemComponent> OnItemAdded;
-        public Action<ItemComponent> OnItemRemoved;
+        public event Action<ItemComponent> OnItemAdded;
+        public event Action<ItemComponent> OnItemRemoved;
 
         public int CurrentItemsWeight => _currentItemsWeight;
         public int MaxItemsWeight => maxItemsWeight;

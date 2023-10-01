@@ -13,8 +13,8 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
     public EndingPanelDataHolder EndingPanelDataHolder;
 
     [Header("Memory Data")]
-    public MemoryEntry IntroMemory;
-    public MemoryEntry BadEndingMemory;
+    public string IntroKey;
+    public string BadEndingKey;
     public List<MemoryEntry> endingEntries = new List<MemoryEntry>();
 
     private List<MemoryEntry> activeEndingEntries = new List<MemoryEntry>();
@@ -25,6 +25,7 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
     {
         fadeHelper = new FadeHelper();
         InteractionControl.Instance.enabled = false;
+        DialogueControl.Instance.ShowDialogue(IntroKey);
     }
 
     public void FinishMainGame()
@@ -38,9 +39,6 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
             }
         }
 
-        if (endingEntries.Count <= 0)
-            activeEndingEntries.Add(BadEndingMemory);
-
         EndGame();
     }
 
@@ -49,6 +47,8 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
         fadeHelper.Fade(Instance, IntroPanel, FadeHelper.FadeDirection.FadeOut, 1.0f, 
             () => DisableGO(IntroPanel.gameObject));
         InteractionControl.Instance.enabled = true;
+        
+        DialogueControl.Instance.HideCurrentDialogue();
     }
 
     private void DisableGO(GameObject go)
@@ -63,10 +63,12 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
 
     private void SetEndingPanelData()
     {
-        if(activeEndingEntries.Contains(BadEndingMemory))
+        if(endingEntries.Count <= 0)
         {
             EndingPanelDataHolder.BackwardsButton.gameObject.SetActive(false);
             EndingPanelDataHolder.ForwardButton.gameObject.SetActive(false);
+            
+            DialogueControl.Instance.ShowDialogue(BadEndingKey);
         }
         else
         {
@@ -97,10 +99,10 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
                     DialogueControl.Instance.ShowDialogue(activeEndingEntries[0].Data.PostGameDialogueKey);
                 }
             });
+            
+            EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[0].Data.DialogueImage;
+            DialogueControl.Instance.ShowDialogue(activeEndingEntries[0].Data.PostGameDialogueKey);
         }
-
-        EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[0].Data.DialogueImage;
-        DialogueControl.Instance.ShowDialogue(activeEndingEntries[0].Data.PostGameDialogueKey);
     }
 }
 

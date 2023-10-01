@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
 using Audio;
-using System.Collections.Generic;
-using System.Linq;
 
 public class ItemDisplayCanvas : MonoBehaviourSingletonInScene<ItemDisplayCanvas>
 {

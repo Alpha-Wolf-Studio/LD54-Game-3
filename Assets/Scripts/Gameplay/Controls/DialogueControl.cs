@@ -47,8 +47,7 @@ namespace Gameplay.Controls
         {
             ShowDialogueBox();
 
-            string text = dialogueKey;
-            //string text = Loc.ReplaceKey(dialogKey);
+            string text = Loc.ReplaceKey(dialogueKey);
             string currentText = "";
 
             int currentIndex = 0;

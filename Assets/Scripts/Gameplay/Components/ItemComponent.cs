@@ -47,6 +47,8 @@ namespace Gameplay.Components
     }
 }
 
+#if UNITY_EDITOR
+
 namespace Gameplay.Editors
 {
     [CustomEditor(typeof(ItemComponent))]
@@ -74,3 +76,5 @@ namespace Gameplay.Editors
         }
     }
 }
+
+#endif

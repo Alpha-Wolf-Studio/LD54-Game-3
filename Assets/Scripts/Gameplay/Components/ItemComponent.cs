@@ -4,14 +4,12 @@ using UnityEditor;
 using Gameplay.Interfaces;
 using Gameplay.Components;
 using UnityEngine.EventSystems;
-using Unity.VisualScripting;
-using System.Runtime.Serialization;
 using Gameplay.Controls;
 using Gameplay.Data;
 
 namespace Gameplay.Components
 {
-    [RequireComponent(typeof(Collider2D))]
+    [RequireComponent(typeof(Collider2D)), RequireComponent(typeof(SpriteRenderer))]
     public class ItemComponent : MonoBehaviour, IInteractable, IPointerDownHandler
     {
         #region Variables
@@ -29,9 +27,18 @@ namespace Gameplay.Components
 
         [SerializeField] private GameObject gameplayPanel;
         public GameObject GameplayPanel => gameplayPanel;
+
+        private bool _selected;
+        private SpriteRenderer _itemRenderer;
+        
         #endregion
         
         public event Action OnInteract;
+
+        private void Awake()
+        {
+            _itemRenderer = GetComponent<SpriteRenderer>();
+        }
 
         public void Interact()
         {
@@ -41,8 +48,38 @@ namespace Gameplay.Components
         public void OnPointerDown(PointerEventData eventData)
         {
             Interact();
-            ItemDisplayCanvas.Get().OpenCanvas(gameplayPanel);
-            DialogueControl.Instance.ShowDialogue(itemTextData.Data.DialogueKey);
+
+            if (!_selected)
+            {
+                ItemDisplayCanvas.Get().OpenCanvas(gameplayPanel);
+                DialogueControl.Instance.ShowDialogue(itemTextData.Data.DialogueKey);
+            }
+            else
+            {
+                ChangeState(false);
+            }
+        }
+
+        public void ChangeState(bool state)
+        {
+            _selected = state;
+
+            if (_selected)
+            {
+                BackpackControl.Instance.AddItem(this);
+                
+                Color rendererColor = _itemRenderer.color;
+                rendererColor.a = .2f;
+                _itemRenderer.color = rendererColor;
+            }
+            else
+            {
+                BackpackControl.Instance.RemoveItem(this);
+                
+                Color rendererColor = _itemRenderer.color;
+                rendererColor.a = 1f;
+                _itemRenderer.color = rendererColor;
+            }
         }
     }
 }

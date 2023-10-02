@@ -13,7 +13,7 @@ using Data;
 namespace Gameplay.Components
 {
     [RequireComponent(typeof(Collider2D)), RequireComponent(typeof(SpriteRenderer))]
-    public class ItemComponent : MonoBehaviour, IInteractable, IPointerDownHandler
+    public class ItemComponent : MonoBehaviour, IInteractable, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
     {
         #region Variables
         [SerializeField] private int id;
@@ -33,6 +33,9 @@ namespace Gameplay.Components
 
         [SerializeField] private ItemDisplayPanel gameplayPanel;
         public ItemDisplayPanel GameplayPanel => gameplayPanel;
+        
+        [SerializeField] private GameObject worldPanel;
+        public GameObject WorldPanel => worldPanel;
 
         private bool _stored;
         private SpriteRenderer _itemRenderer;
@@ -98,6 +101,7 @@ namespace Gameplay.Components
             else
             {
                 BackpackControl.Instance.RemoveItem(this);
+                worldPanel.SetActive(false);
                 
                 Color rendererColor = _itemRenderer.color;
                 rendererColor.a = 1f;
@@ -105,6 +109,18 @@ namespace Gameplay.Components
             }
             
             DialogueControl.Instance.HideCurrentDialogue();
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            if (_stored)
+                worldPanel.SetActive(true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            if (_stored)
+                worldPanel.SetActive(false);
         }
     }
 }
@@ -137,6 +153,9 @@ namespace Gameplay.Editors
             serializedObject.FindProperty("itemTextData").objectReferenceValue = EditorGUILayout.ObjectField("Item Text",
             script.ItemTextKey, typeof(MemoryEntry), true) as MemoryEntry;
 
+            serializedObject.FindProperty("worldPanel").objectReferenceValue = EditorGUILayout.ObjectField("World Canvas Panel",
+                script.WorldPanel, typeof(GameObject), true) as GameObject;
+            
             serializedObject.ApplyModifiedProperties();
         }
     }

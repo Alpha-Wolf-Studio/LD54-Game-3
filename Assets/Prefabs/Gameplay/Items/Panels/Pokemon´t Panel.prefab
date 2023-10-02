@@ -96,8 +96,8 @@ MonoBehaviour:
   storeTooltipText: {fileID: 9203699530295219396}
   canStoreKey: key_store_item
   cantStoreKey: key_cant_store_item
-  trigger: {fileID: 0}
-  clip: {fileID: 0}
+  trigger: {fileID: 7069943043783515157}
+  clip: {fileID: 8300000, guid: c940cc789f32de447bcb3795c232317f, type: 3}
 --- !u!1 &8485926086697278399
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +428,24 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1769687527276975299, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
   m_PrefabInstance: {fileID: 1032062698117114008}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3951914301082055924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4074238756880358508, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+  m_PrefabInstance: {fileID: 1032062698117114008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7069943043783515157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951914301082055924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!114 &5876972515623030285 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6907867429037303445, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}

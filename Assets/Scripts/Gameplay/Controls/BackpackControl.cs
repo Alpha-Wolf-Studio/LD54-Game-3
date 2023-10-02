@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Audio;
 using Gameplay.Components;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Gameplay.Controls
     public class BackpackControl : MonoBehaviour
     {
         [SerializeField] private int maxItemsWeight;
+        [SerializeField] private AudioClip storeItemClip;
         
         public static BackpackControl Instance { get; private set; }
 
@@ -44,6 +46,8 @@ namespace Gameplay.Controls
             
             _itemsInBackpack.Add(itemComponent);
             OnItemAdded?.Invoke(itemComponent);
+            
+            AudioManager.Instance.PlaySfx(storeItemClip);
         }
         
         public void RemoveItem(ItemComponent itemComponent)

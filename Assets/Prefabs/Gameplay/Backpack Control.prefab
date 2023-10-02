@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 4850076984516515692}
   - component: {fileID: 269187649780402945}
   - component: {fileID: 8616820186812923175}
+  - component: {fileID: 6906330881154616683}
   m_Layer: 0
   m_Name: Move Out Button
   m_TagString: Untagged
@@ -159,6 +160,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6906330881154616683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210780035936152014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94aa4a68251f85409ee55070cffd99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiData: {fileID: 11400000, guid: 8d76a9f77f84518488a6ec201d41e32b, type: 2}
+  textToHighlight: {fileID: 3945963186078302162}
 --- !u!1 &3713257243051625075
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxItemsWeight: 100
-  storeItemClip: {fileID: 8300000, guid: 275b8734ecf383842816880b52d28558, type: 3}
+  storeItemClip: {fileID: 8300000, guid: 4d6118c477e25f041b31d77a0f768fab, type: 3}
 --- !u!1 &6101990109652125616
 GameObject:
   m_ObjectHideFlags: 0

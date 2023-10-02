@@ -660,8 +660,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -935,8 +935,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1537,7 +1537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a94aa4a68251f85409ee55070cffd99f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fontData: {fileID: 11400000, guid: 8d76a9f77f84518488a6ec201d41e32b, type: 2}
+  uiData: {fileID: 11400000, guid: 8d76a9f77f84518488a6ec201d41e32b, type: 2}
   textToHighlight: {fileID: 8349574694585446989}
 --- !u!1 &5481745084367538800
 GameObject:

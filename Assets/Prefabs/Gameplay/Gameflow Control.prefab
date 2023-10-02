@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 4176569021901170065}
   - component: {fileID: 4176569021901170064}
   - component: {fileID: 4176569021901170067}
+  - component: {fileID: 949095786327627260}
   m_Layer: 0
   m_Name: Start Packing Button
   m_TagString: Untagged
@@ -454,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -497,6 +498,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &949095786327627260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4176569021901170093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94aa4a68251f85409ee55070cffd99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiData: {fileID: 11400000, guid: 8d76a9f77f84518488a6ec201d41e32b, type: 2}
+  textToHighlight: {fileID: 4176569022729068611}
 --- !u!1 &4176569022598973395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1330,7 @@ GameObject:
   - component: {fileID: 9076250020789237309}
   - component: {fileID: 3427629258707983560}
   - component: {fileID: 6101835191723340209}
+  - component: {fileID: 2102704225984007943}
   m_Layer: 0
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -1425,3 +1441,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2102704225984007943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8546442218831764390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a94aa4a68251f85409ee55070cffd99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiData: {fileID: 11400000, guid: 8d76a9f77f84518488a6ec201d41e32b, type: 2}
+  textToHighlight: {fileID: 9198600075569611551}

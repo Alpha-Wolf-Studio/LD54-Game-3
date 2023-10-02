@@ -1,26 +1,43 @@
+using Audio;
 using Data;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 namespace Main_Menu
 {
-    public class UITextHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class UITextHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
-        [SerializeField] private FontData fontData;
+        [FormerlySerializedAs("fontData")] [SerializeField] private UIData uiData;
         [SerializeField] private TextMeshProUGUI textToHighlight;
         
         private void Awake()
         {
-            textToHighlight.font = fontData.fontAsset;
-            textToHighlight.fontMaterial = fontData.normalMaterial;
+            textToHighlight.font = uiData.fontAsset;
+            textToHighlight.fontMaterial = uiData.normalMaterial;
         }
 
-        private void SetHighlightMaterial() => textToHighlight.fontMaterial = fontData.highlightMaterial;
-        private void SetNormalMaterial() => textToHighlight.fontMaterial = fontData.normalMaterial;
+        private void SetHighlightMaterial() => textToHighlight.fontMaterial = uiData.highlightMaterial;
+        private void SetNormalMaterial() => textToHighlight.fontMaterial = uiData.normalMaterial;
 
-        public void OnPointerEnter(PointerEventData eventData) => SetHighlightMaterial();
+        private void PlayHighlightAudio() => AudioManager.Instance.PlaySfx(uiData.highlightAudio);
+        private void PlayClickAudio() => AudioManager.Instance.PlaySfx(uiData.selectAudio);
+        
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            PlayHighlightAudio();
+            SetHighlightMaterial();
+        }
 
-        public void OnPointerExit(PointerEventData eventData) => SetNormalMaterial();
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            SetNormalMaterial();
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            PlayClickAudio();
+        }
     }
 }

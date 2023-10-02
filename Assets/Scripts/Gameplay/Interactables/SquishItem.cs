@@ -8,8 +8,9 @@ public class SquishItem : ItemDisplayPanel
     public EventTrigger Trigger;
     public string State;
 
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
         var pointerEvent = new EventTrigger.Entry();
 
         pointerEvent.eventID = EventTriggerType.PointerDown;

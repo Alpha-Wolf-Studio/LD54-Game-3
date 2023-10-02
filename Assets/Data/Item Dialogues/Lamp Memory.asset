@@ -17,4 +17,4 @@ MonoBehaviour:
     DialogueKey: key_lamp_dialogue
     PostGameDialogueKey: key_lamp_ending
     DialogueColor: {r: 1, g: 1, b: 1, a: 1}
-    DialogueImage: {fileID: 0}
+    DialogueImage: {fileID: 21300000, guid: a11c285cd4ecca84f8ae68fd537646a1, type: 3}

@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using CustomSceneSwitcher.Switcher.Data;
 using UnityEngine;
 
 public class UiScreenMainMenu : MonoBehaviour
@@ -7,8 +7,10 @@ public class UiScreenMainMenu : MonoBehaviour
     [SerializeField] private UiControllerMainMenu controllerMainMenu;
     [SerializeField] private UiControllerSettings controllerSettings;
     [SerializeField] private UiControllerCredits controllerCredits;
+    [SerializeField] private UiControllerMoreGames controllerMoreGames;
     [SerializeField] private AnimationCurve animationCurve;
     [SerializeField] private float durationFade = 1.0f;
+    [SerializeField] private SceneChangeData sceneChangeToGameplayData;
 
     private IEnumerator switchPanel;
 
@@ -17,8 +19,12 @@ public class UiScreenMainMenu : MonoBehaviour
         controllerMainMenu.onPlayButtonClicked += ControllerMainMenu_onPlayButtonClicked;
         controllerMainMenu.onSettingsButtonClicked += ControllerMainMenu_onSettingsButtonClicked;
         controllerMainMenu.onCreditsButtonClicked += ControllerMainMenu_onCreditsButtonClicked;
+        controllerMainMenu.onMoreGamesButtonClicked += ControllerMainMenu_onMoreGameButtonClicked;
+            
         controllerSettings.onSettingsCloseButtonClicked += ControllerSettings_onSettingsCloseButtonClicked;
         controllerCredits.onCreditsCloseButtonClicked += ControllerCredits_onCreditsCloseButtonClicked;
+        controllerMoreGames.onMoreGamesCloseButtonClicked
+            += ControllerMoreGames_onMoreGamesCloseButtonClicked;
     }
 
     private void Start ()
@@ -33,19 +39,26 @@ public class UiScreenMainMenu : MonoBehaviour
         controllerMainMenu.onPlayButtonClicked -= ControllerMainMenu_onPlayButtonClicked;
         controllerMainMenu.onSettingsButtonClicked -= ControllerMainMenu_onSettingsButtonClicked;
         controllerMainMenu.onCreditsButtonClicked -= ControllerMainMenu_onCreditsButtonClicked;
+        controllerMainMenu.onMoreGamesButtonClicked -= ControllerMainMenu_onMoreGameButtonClicked;
+        
         controllerSettings.onSettingsCloseButtonClicked -= ControllerSettings_onSettingsCloseButtonClicked;
         controllerCredits.onCreditsCloseButtonClicked -= ControllerCredits_onCreditsCloseButtonClicked;
+        controllerMoreGames.onMoreGamesCloseButtonClicked
+            -= ControllerMoreGames_onMoreGamesCloseButtonClicked;
     }
 
     private void ControllerMainMenu_onPlayButtonClicked ()
     {
-        throw new NotImplementedException();
+        CustomSceneSwitcher.Switcher.SceneSwitcher.ChangeScene(sceneChangeToGameplayData);
     }
 
     private void ControllerMainMenu_onSettingsButtonClicked () => SwitchController(durationFade, controllerSettings.canvasGroup, controllerMainMenu.canvasGroup);
 
     private void ControllerMainMenu_onCreditsButtonClicked () => SwitchController(durationFade, controllerCredits.canvasGroup, controllerMainMenu.canvasGroup);
 
+    private void ControllerMainMenu_onMoreGameButtonClicked() => SwitchController(durationFade,
+        controllerMoreGames.canvasGroup, controllerMainMenu.canvasGroup);
+    
     private void ControllerMainMenu_onExitButtonClicked ()
     {
 #if UNITY_EDITOR
@@ -57,6 +70,8 @@ public class UiScreenMainMenu : MonoBehaviour
 #endif
     }
 
+    private void ControllerMoreGames_onMoreGamesCloseButtonClicked () => SwitchController(durationFade, controllerMainMenu.canvasGroup, controllerMoreGames.canvasGroup);
+    
     private void ControllerCredits_onCreditsCloseButtonClicked () => SwitchController(durationFade, controllerMainMenu.canvasGroup, controllerCredits.canvasGroup);
 
     private void ControllerSettings_onSettingsCloseButtonClicked () => SwitchController(durationFade, controllerMainMenu.canvasGroup, controllerSettings.canvasGroup);

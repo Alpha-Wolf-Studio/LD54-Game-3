@@ -1,6 +1,8 @@
 using System;
 using UnityEditor;
 
+#if UNITY_EDITOR
+
 namespace CustomSceneSwitcher.Switcher.External
 {
     public class ExtendedEditorWindow : EditorWindow
@@ -39,3 +41,5 @@ namespace CustomSceneSwitcher.Switcher.External
         
     }
 }
+
+#endif

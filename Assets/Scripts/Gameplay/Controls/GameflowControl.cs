@@ -80,7 +80,6 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
     private void EndGame()
     {
         EndingPanel.gameObject.SetActive(true);
-
         
         EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries.Count == 0 ? 
             BadEndingSprite : activeEndingEntries[0].Data.DialogueImage;
@@ -110,7 +109,7 @@ public class GameflowControl : MonoBehaviourSingleton<GameflowControl>
             EndingPanelDataHolder.BackwardsButton.onClick.AddListener(() =>
             {
                 currentEndingEntryIndex--;
-                if(currentEndingEntryIndex > 0)
+                if(currentEndingEntryIndex >= 0)
                 {
                     EndingPanelDataHolder.ItemCloseUpImage.sprite = activeEndingEntries[currentEndingEntryIndex].Data.DialogueImage;
                     DialogueControl.Instance.ShowDialogue(activeEndingEntries[currentEndingEntryIndex].Data.PostGameDialogueKey);
@@ -161,12 +160,13 @@ public class FadeHelper
     private IEnumerator FadeCanvas(CanvasGroup canvas, float desiredAlpha, float duration, Action evt = null)
     {
         float elapsedTime = 0;
+        float startingAlpha = canvas.alpha;
 
-        while(elapsedTime < duration)
+        while(canvas.alpha < desiredAlpha)
         {
             elapsedTime += Time.deltaTime;
 
-            canvas.alpha = Mathf.Lerp(canvas.alpha, desiredAlpha, elapsedTime / duration);
+            canvas.alpha = Mathf.Lerp(startingAlpha, desiredAlpha, elapsedTime / duration);
 
             yield return null;
         }

@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 public class CSVLoader
 {
     private TextAsset csvFile;
     private char lineSeparator = '\n';
+    private char specialCharacter = '*'; 
     private char surround = '"';
     private string[] fieldSeparator = { "," };
 
@@ -59,6 +61,15 @@ public class CSVLoader
             }
         }
 
-        return dictionary;
+        Dictionary<string, string> returnDictionary = new Dictionary<string, string>(dictionary.Count);
+
+        foreach (var pair in dictionary)
+        {
+            string key = pair.Key.Replace('*', ',');
+            string value = pair.Value.Replace('*', ',');
+            returnDictionary.Add(key, value);
+        }
+        
+        return returnDictionary;
     }
 }

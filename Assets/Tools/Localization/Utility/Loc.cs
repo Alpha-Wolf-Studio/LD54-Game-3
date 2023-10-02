@@ -19,11 +19,11 @@ public class Loc
 
     public static void Init()
     {
-        CSVLoader csvLoader = new CSVLoader();
-        csvLoader.LoadCSV("localization");
+        CSVLoader tsvLoader = new CSVLoader();
+        tsvLoader.LoadCSV("localization");
 
-        localisedEN = csvLoader.GetDictionaryValues("en");
-        localisedES = csvLoader.GetDictionaryValues("spa");
+        localisedEN = tsvLoader.GetDictionaryValues("en");
+        localisedES = tsvLoader.GetDictionaryValues("spa");
 
         isInit = true;
     }

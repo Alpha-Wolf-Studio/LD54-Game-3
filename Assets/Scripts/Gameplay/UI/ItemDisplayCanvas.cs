@@ -1,4 +1,4 @@
-using System;
+using Data;
 
 namespace Gameplay.UI
 {
@@ -6,17 +6,17 @@ namespace Gameplay.UI
     {
         private ItemDisplayPanel _currentItemDisplayPanel;
     
-        public void SetCanvas(ItemDisplayPanel go, Action onStoreAction = null, Action onBackToRoomAction = null)
+        public void SetCanvas(ItemDisplayPanel go, StoreData storeData)
         {
             _currentItemDisplayPanel = Instantiate(go, transform);
 
-            if (onBackToRoomAction != null) onBackToRoomAction += CleanCanvas;
-            else onBackToRoomAction = CleanCanvas;
+            if (storeData.CancelAction != null) storeData.CancelAction += CleanCanvas;
+            else storeData.CancelAction = CleanCanvas;
             
-            if (onStoreAction != null) onStoreAction += CleanCanvas;
-            else onStoreAction = CleanCanvas;
+            if (storeData.StoreAction != null) storeData.StoreAction += CleanCanvas;
+            else storeData.StoreAction = CleanCanvas;
             
-            _currentItemDisplayPanel.SetPanel(onStoreAction, onBackToRoomAction);
+            _currentItemDisplayPanel.SetPanel(storeData);
         }
 
         private void CleanCanvas()

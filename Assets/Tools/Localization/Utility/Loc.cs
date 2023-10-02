@@ -5,7 +5,7 @@ public class Loc
     public enum Language
     {
         English,
-        Spanish,
+        Español,
         //French
     }
 
@@ -40,7 +40,7 @@ public class Loc
             case Language.English:
                 localisedEN.TryGetValue(key, out value);
                 break;
-            case Language.Spanish:
+            case Language.Español:
                 localisedES.TryGetValue(key, out value);
                 break;
             //case Language.French:

@@ -77,7 +77,7 @@ public class UiControllerSettings : MonoBehaviour
         dropdownLanguage.onValueChanged.AddListener(delegate
         {
             ChangeLanguage(dropdownLanguage);
-            onLanguageChanged.Invoke();
+            onLanguageChanged?.Invoke();
         });
 
         dropdownLanguage.value = (int)Loc.currentLanguage;

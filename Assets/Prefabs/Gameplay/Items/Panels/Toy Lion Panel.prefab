@@ -242,6 +242,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backToTheRoomButton: {fileID: 3397225912802272394}
   storeButton: {fileID: 9044904419654165576}
+  storeTooltipText: {fileID: 6030561853703470721}
+  canStoreKey: key_store_item
+  cantStoreKey: key_cant_store_item
   trigger: {fileID: 0}
   clip: {fileID: 0}
   Animator: {fileID: 936143308075550696}
@@ -466,6 +469,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1769687527276975299, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
   m_PrefabInstance: {fileID: 2474825259465474781}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6030561853703470721 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8207955988618067036, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+  m_PrefabInstance: {fileID: 2474825259465474781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &9044904419654165576 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6907867429037303445, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}

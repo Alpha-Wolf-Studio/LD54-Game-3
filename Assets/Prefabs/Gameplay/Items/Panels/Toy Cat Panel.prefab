@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 1023199985993239435}
   - component: {fileID: 7210693333644868698}
   - component: {fileID: 512917991766147273}
+  - component: {fileID: 6587699470363031132}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Item Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,6 +136,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6587699470363031132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572978582562805637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225eca42463f21b43938f59a292cab92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: key_cat
 --- !u!1 &4825946264368339968
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,6 +242,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backToTheRoomButton: {fileID: 8014772276366174618}
   storeButton: {fileID: 4439030505894603096}
+  storeTooltipText: {fileID: 1418548197154141073}
+  canStoreKey: key_store_item
+  cantStoreKey: key_cant_store_item
   trigger: {fileID: 0}
   clip: {fileID: 0}
   Animator: {fileID: 2850672683147079457}
@@ -398,6 +415,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+--- !u!114 &1418548197154141073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8207955988618067036, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+  m_PrefabInstance: {fileID: 7081688768590778317}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4439030505894603096 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6907867429037303445, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}

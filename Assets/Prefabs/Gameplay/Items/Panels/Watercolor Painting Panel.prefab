@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8663938908495679909}
   - component: {fileID: 6755551947663315014}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Item Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -242,6 +242,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backToTheRoomButton: {fileID: 3118312964086620749}
   storeButton: {fileID: 8783940449563632271}
+  storeTooltipText: {fileID: 6328678860719142982}
+  canStoreKey: key_store_item
+  cantStoreKey: key_cant_store_item
   trigger: {fileID: 7811644146497745472}
   clip: {fileID: 8300000, guid: 2865c544d341e984e92481c564324f72, type: 3}
 --- !u!1001 &2754935919943255066
@@ -443,6 +446,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1769687527276975299, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
   m_PrefabInstance: {fileID: 2754935919943255066}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6328678860719142982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8207955988618067036, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}
+  m_PrefabInstance: {fileID: 2754935919943255066}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8783940449563632271 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6907867429037303445, guid: 287f1efd1dcf28748a655c14d0cd5d3b, type: 3}

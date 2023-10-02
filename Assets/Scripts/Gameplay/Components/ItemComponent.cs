@@ -8,6 +8,7 @@ using Gameplay.Controls;
 using Gameplay.Data;
 using Gameplay.UI;
 using Audio;
+using Data;
 
 namespace Gameplay.Components
 {
@@ -61,7 +62,19 @@ namespace Gameplay.Components
 
             if (!_stored)
             {
-                ItemDisplayCanvas.Get().SetCanvas(gameplayPanel, () => ChangeState(true), () => DialogueControl.Instance.HideCurrentDialogue());
+                int weightPostStore = BackpackControl.Instance.CurrentItemsWeight + itemWeight;
+                bool canBeStored = weightPostStore <= BackpackControl.Instance.MaxItemsWeight;
+                int weighOverflow = canBeStored ? 0 : weightPostStore - BackpackControl.Instance.MaxItemsWeight;
+                
+                StoreData storeWeightData = new StoreData()
+                {
+                    CanBeStored = canBeStored,
+                    WeightOverflow = weighOverflow,
+                    StoreAction = () => ChangeState(true),
+                    CancelAction = () => DialogueControl.Instance.HideCurrentDialogue()
+                };
+                
+                ItemDisplayCanvas.Get().SetCanvas(gameplayPanel, storeWeightData);
                 DialogueControl.Instance.ShowDialogue(itemTextData.Data.DialogueKey);
             }
             else

@@ -250,6 +250,7 @@ MonoBehaviour:
   Animator: {fileID: 936143308075550696}
   Trigger: {fileID: 7752483591052021035}
   State: Squish
+  squishClip: {fileID: 8300000, guid: 3142d046f249ab347bb122be8853003b, type: 3}
 --- !u!1001 &2474825259465474781
 PrefabInstance:
   m_ObjectHideFlags: 0

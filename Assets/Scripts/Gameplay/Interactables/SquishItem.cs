@@ -1,3 +1,4 @@
+using Audio;
 using Gameplay.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,6 +8,7 @@ public class SquishItem : ItemDisplayPanel
     public Animator Animator;
     public EventTrigger Trigger;
     public string State;
+    public AudioClip squishClip;
 
     private new void Awake()
     {
@@ -23,5 +25,6 @@ public class SquishItem : ItemDisplayPanel
     private void PlayAnimation(string state)
     {
         Animator.SetTrigger(state);
+        AudioManager.Instance.PlaySfx(squishClip);
     }
 }

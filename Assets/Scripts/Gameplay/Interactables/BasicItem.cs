@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using Gameplay.UI;
 using System;
+using Gameplay.UI;
 
-public class BasicItem : ItemDisplayPanel
+namespace Gameplay.Interactables
 {
-    public Action Action;
+    public class BasicItem : ItemDisplayPanel
+    {
+        public Action Action;
+    }
 }

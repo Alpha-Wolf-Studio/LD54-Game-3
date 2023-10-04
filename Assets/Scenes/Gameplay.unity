@@ -214,6 +214,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 229061817}
     m_Modifications:
+    - target: {fileID: 805866665517761012, guid: 7bdabed9a2bb4fb42812bf0f684bdd3c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 805866665517761012, guid: 7bdabed9a2bb4fb42812bf0f684bdd3c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 805866665517761012, guid: 7bdabed9a2bb4fb42812bf0f684bdd3c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.797
+      objectReference: {fileID: 0}
     - target: {fileID: 932908107485423699, guid: 7bdabed9a2bb4fb42812bf0f684bdd3c, type: 3}
       propertyPath: m_Name
       value: Old Lamp
@@ -262,11 +274,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8694466235136565349, guid: 7bdabed9a2bb4fb42812bf0f684bdd3c, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bdabed9a2bb4fb42812bf0f684bdd3c, type: 3}
 --- !u!4 &178308143 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 932908107485423703, guid: 7bdabed9a2bb4fb42812bf0f684bdd3c, type: 3}
+  m_CorrespondingSourceObject: {fileID: 805866665517761012, guid: 7bdabed9a2bb4fb42812bf0f684bdd3c, type: 3}
   m_PrefabInstance: {fileID: 178308142}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &218967200

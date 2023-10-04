@@ -3,28 +3,31 @@ using Gameplay.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SquishItem : ItemDisplayPanel
+namespace Gameplay.Interactables
 {
-    public Animator Animator;
-    public EventTrigger Trigger;
-    public string State;
-    public AudioClip squishClip;
-
-    private new void Awake()
+    public class SquishItem : ItemDisplayPanel
     {
-        base.Awake();
-        var pointerEvent = new EventTrigger.Entry();
+        public Animator Animator;
+        public EventTrigger Trigger;
+        public string State;
+        public AudioClip squishClip;
 
-        pointerEvent.eventID = EventTriggerType.PointerDown;
+        private new void Awake()
+        {
+            base.Awake();
+            var pointerEvent = new EventTrigger.Entry();
 
-        pointerEvent.callback.AddListener((e) => PlayAnimation(State));
+            pointerEvent.eventID = EventTriggerType.PointerDown;
 
-        Trigger.triggers.Add(pointerEvent);
-    }
+            pointerEvent.callback.AddListener((e) => PlayAnimation(State));
 
-    private void PlayAnimation(string state)
-    {
-        Animator.SetTrigger(state);
-        AudioManager.Instance.PlaySfx(squishClip);
+            Trigger.triggers.Add(pointerEvent);
+        }
+
+        private void PlayAnimation(string state)
+        {
+            Animator.SetTrigger(state);
+            AudioManager.Instance.PlaySfx(squishClip);
+        }
     }
 }

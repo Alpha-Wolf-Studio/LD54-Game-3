@@ -1,6 +1,6 @@
 using Audio;
-using System;
 using Data;
+using Gameplay.Components;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -21,6 +21,8 @@ namespace Gameplay.UI
         [SerializeField] private EventTrigger trigger;
         [SerializeField] private AudioClip clip;
 
+        protected ItemComponent ItemComponent;
+        
         public virtual void Awake()
         {
             if(clip != null && trigger != null)
@@ -32,7 +34,7 @@ namespace Gameplay.UI
             }
         }
 
-        public void SetPanel(StoreData data)
+        public virtual void SetPanel(StoreData data, ItemComponent itemComponent)
         {
             storeButton.onClick.AddListener(() => data.StoreAction?.Invoke());
             backToTheRoomButton.onClick.AddListener(() => data.CancelAction?.Invoke());
@@ -40,6 +42,8 @@ namespace Gameplay.UI
             storeButton.interactable = data.CanBeStored;
             storeTooltipText.color = data.CanBeStored ? Color.white : Color.red;
             storeTooltipText.text = data.CanBeStored ? Loc.ReplaceKey(canStoreKey) : Loc.ReplaceKey(cantStoreKey);
+            
+            ItemComponent = itemComponent;
         }
 
         private void OnDestroy()

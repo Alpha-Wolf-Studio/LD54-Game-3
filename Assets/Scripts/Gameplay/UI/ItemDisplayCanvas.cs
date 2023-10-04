@@ -1,4 +1,5 @@
 using Data;
+using Gameplay.Components;
 
 namespace Gameplay.UI
 {
@@ -6,7 +7,7 @@ namespace Gameplay.UI
     {
         private ItemDisplayPanel _currentItemDisplayPanel;
     
-        public void SetCanvas(ItemDisplayPanel go, StoreData storeData)
+        public void SetCanvas(ItemDisplayPanel go, StoreData storeData, ItemComponent itemComponent)
         {
             _currentItemDisplayPanel = Instantiate(go, transform);
 
@@ -16,7 +17,7 @@ namespace Gameplay.UI
             if (storeData.StoreAction != null) storeData.StoreAction += CleanCanvas;
             else storeData.StoreAction = CleanCanvas;
             
-            _currentItemDisplayPanel.SetPanel(storeData);
+            _currentItemDisplayPanel.SetPanel(storeData, itemComponent);
         }
 
         private void CleanCanvas()

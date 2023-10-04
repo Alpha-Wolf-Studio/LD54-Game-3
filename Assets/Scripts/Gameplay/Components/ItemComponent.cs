@@ -77,7 +77,7 @@ namespace Gameplay.Components
                     CancelAction = () => DialogueControl.Instance.HideCurrentDialogue()
                 };
                 
-                ItemDisplayCanvas.Get().SetCanvas(gameplayPanel, storeWeightData);
+                ItemDisplayCanvas.Get().SetCanvas(gameplayPanel, storeWeightData, this);
                 DialogueControl.Instance.ShowDialogue(itemTextData.Data.DialogueKey);
             }
             else

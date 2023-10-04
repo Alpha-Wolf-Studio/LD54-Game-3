@@ -8,10 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 932908107485423703}
+  - component: {fileID: 805866665517761012}
   - component: {fileID: 932908107485423702}
   - component: {fileID: 932908107485423700}
   - component: {fileID: 3813367763356356657}
+  - component: {fileID: 5629119858157165085}
   m_Layer: 6
   m_Name: Old Lamp
   m_TagString: Untagged
@@ -19,7 +20,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &932908107485423703
+--- !u!4 &805866665517761012
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,7 +105,7 @@ MonoBehaviour:
   itemSelectedClip: {fileID: 8300000, guid: 8d1f8dc176e174244ab78366a10b0c0d, type: 3}
   itemReturnClip: {fileID: 8300000, guid: 90ab045bb3be62a4ea22b44e200389a1, type: 3}
   itemTextData: {fileID: 11400000, guid: 5fd8d988ead60114d9b8c1ece9594dd1, type: 2}
-  gameplayPanel: {fileID: 7880745173257969039, guid: 44c4b54da487fbb478da0c55e098c98a, type: 3}
+  gameplayPanel: {fileID: 8966551119493237369, guid: 44c4b54da487fbb478da0c55e098c98a, type: 3}
   worldPanel: {fileID: 1985227030410775476}
 --- !u!60 &3813367763356356657
 PolygonCollider2D:
@@ -171,12 +172,27 @@ PolygonCollider2D:
       - {x: 0.17, y: -1.4549999}
       - {x: 0.16, y: -1.3149999}
       - {x: 0.049999997, y: -1.245}
+--- !u!114 &5629119858157165085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 932908107485423699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1e7e00128a84543aa0ad02dbf1c50c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 86a765af19dabd44bbc8d41c2911fdd7, type: 3}
+  - {fileID: 21300000, guid: 298baeff1fa4dd54c8aff836e9047bc3, type: 3}
 --- !u!1001 &9020343412914121378
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 932908107485423703}
+    m_TransformParent: {fileID: 805866665517761012}
     m_Modifications:
     - target: {fileID: 1620346595280534447, guid: 20dc9fbaacc825a4db56908ed2e726c3, type: 3}
       propertyPath: m_Name
@@ -248,11 +264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2184560016753050951, guid: 20dc9fbaacc825a4db56908ed2e726c3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.035
+      value: -0.11999893
       objectReference: {fileID: 0}
     - target: {fileID: 2184560016753050951, guid: 20dc9fbaacc825a4db56908ed2e726c3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.817
+      value: 2.3100014
       objectReference: {fileID: 0}
     - target: {fileID: 2184560016753050951, guid: 20dc9fbaacc825a4db56908ed2e726c3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
